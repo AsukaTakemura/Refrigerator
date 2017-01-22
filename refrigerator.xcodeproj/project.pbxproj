@@ -14,6 +14,7 @@
 		177D812B1E220A6A00486943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177D81291E220A6A00486943 /* LaunchScreen.storyboard */; };
 		177D81361E220A6A00486943 /* refrigeratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81351E220A6A00486943 /* refrigeratorTests.swift */; };
 		177D81411E220A6A00486943 /* refrigeratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81401E220A6A00486943 /* refrigeratorUITests.swift */; };
+		177D814F1E22263600486943 /* ninjin.png in Resources */ = {isa = PBXBuildFile; fileRef = 177D814E1E22263600486943 /* ninjin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		177D813C1E220A6A00486943 /* refrigeratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = refrigeratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		177D81401E220A6A00486943 /* refrigeratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = refrigeratorUITests.swift; sourceTree = "<group>"; };
 		177D81421E220A6A00486943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		177D814E1E22263600486943 /* ninjin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ninjin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		177D811F1E220A6A00486943 /* refrigerator */ = {
 			isa = PBXGroup;
 			children = (
+				177D814E1E22263600486943 /* ninjin.png */,
 				177D81201E220A6A00486943 /* AppDelegate.swift */,
 				177D81221E220A6A00486943 /* ViewController.swift */,
 				177D81241E220A6A00486943 /* Main.storyboard */,
@@ -235,6 +238,7 @@
 				177D812B1E220A6A00486943 /* LaunchScreen.storyboard in Resources */,
 				177D81281E220A6A00486943 /* Assets.xcassets in Resources */,
 				177D81261E220A6A00486943 /* Main.storyboard in Resources */,
+				177D814F1E22263600486943 /* ninjin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +507,7 @@
 				177D81471E220A6A00486943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		177D81481E220A6A00486943 /* Build configuration list for PBXNativeTarget "refrigeratorTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +516,7 @@
 				177D814A1E220A6A00486943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		177D814B1E220A6A00486943 /* Build configuration list for PBXNativeTarget "refrigeratorUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +525,7 @@
 				177D814D1E220A6A00486943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
