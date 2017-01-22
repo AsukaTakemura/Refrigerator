@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //タップしたとき
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         
