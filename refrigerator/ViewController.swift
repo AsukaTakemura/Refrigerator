@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         imageView.center = gesture.location(in: self.view)
         
         //ジェスチャーを加える
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapSingle(sender:)))
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapSingle(gesture:)))
         imageView.addGestureRecognizer(singleTap)
         
         /* パンジェスチャーをimageViewに追加 (2行) ドラッグした時のメソッドは下にあるよ */
@@ -73,12 +73,12 @@ class ViewController: UIViewController {
         imageIndex = 1
     }
     
-    func tapSingle(sender: UITapGestureRecognizer) {
+    func tapSingle(gesture: UITapGestureRecognizer) {
         performSegue(withIdentifier: "tosetting", sender: nil)
     }
 
     /* ドラッグした時のメソッド */
-    /* 内容はgesuture.view(or sender.view)の中心座標をgesture.location(or sender.location)の位置にする */
+    /* 内容はgesuture.viewの中心座標をgesture.locationの位置にする */
 
 }
 
