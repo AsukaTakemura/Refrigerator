@@ -40,8 +40,7 @@ class ViewController: UIViewController {
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapSingle(sender:)))
         imageView.addGestureRecognizer(singleTap)
         
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.dragImage(gesture:)))
-        imageView.addGestureRecognizer(panGesture)
+        /* パンジェスチャーをimageViewに追加 (2行) ドラッグした時のメソッドは下にあるよ */
         
         imageView.isUserInteractionEnabled = true
         
@@ -78,11 +77,8 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "tosetting", sender: nil)
     }
 
-    func dragImage(gesture: UIGestureRecognizer) {
-        
-        //origin → 座標
-        gesture.view?.center = gesture.location(in: self.view)
-    }
+    /* ドラッグした時のメソッド */
+    /* 内容はgesuture.view(or sender.view)の中心座標をgesture.location(or sender.location)の位置にする */
 
 }
 
