@@ -10,9 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var imageIndex: Int = 0;
+    var imageIndex: Int = 0
     var yasaiArray: [UIImageView] = []
     var reizoukoArray: [UIImage] = [#imageLiteral(resourceName: "ninjin2.png"),#imageLiteral(resourceName: "tomato.png")]
+    var label: UILabel!
     
     
     override func viewDidLoad() {
@@ -21,8 +22,7 @@ class ViewController: UIViewController {
         
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.addImageView(gesture:)))
         self.view.addGestureRecognizer(singleTap)
-        
-    }
+        }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,10 +39,14 @@ class ViewController: UIViewController {
         //ジェスチャーを加える
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapSingle(sender:)))
         imageView.addGestureRecognizer(singleTap)
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.dragImage(gesture:)))
+        imageView.addGestureRecognizer(panGesture)
+        
         imageView.isUserInteractionEnabled = true
         
         self.view.addSubview(imageView)
-
+        
         //配列に加える
         yasaiArray.append(imageView)
     }
@@ -71,9 +75,16 @@ class ViewController: UIViewController {
     }
     
     func tapSingle(sender: UITapGestureRecognizer) {
-        print("タップされました")
+        performSegue(withIdentifier: "tosetting", sender: nil)
     }
-    
+
+    func dragImage(gesture: UIGestureRecognizer) {
+        
+        //origin → 座標
+        gesture.view?.center = gesture.location(in: self.view)
+    }
+
+}
 
     
-}
+
