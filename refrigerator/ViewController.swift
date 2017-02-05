@@ -11,13 +11,17 @@ import UIKit
 class ViewController: UIViewController {
     
     var imageIndex: Int = 0;
-    
-    var imageView: UIImageView!
+    var yasaiArray: [UIImageView] = []
+    var reizoukoArray: [UIImage] = [#imageLiteral(resourceName: "ninjin2.png"),#imageLiteral(resourceName: "tomato.png")]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.addImageView(gesture:)))
+        self.view.addGestureRecognizer(singleTap)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,23 +29,51 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //タップしたとき
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        
-        let touch:UITouch = touches.first!
-        let location: CGPoint = touch.location(in: self.view)
-        
-        let image = UIImage(named: "ninjin.png")
-        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+    func addImageView(gesture: UIGestureRecognizer) {
+        //画像作成
+        let image = reizoukoArray[imageIndex]
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         imageView.image = image
+        imageView.center = gesture.location(in: self.view)
         
-        imageView.center = CGPoint(x: location.x ,y: location.y)
+        //ジェスチャーを加える
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapSingle(sender:)))
+        imageView.addGestureRecognizer(singleTap)
+        imageView.isUserInteractionEnabled = true
         
         self.view.addSubview(imageView)
-        
-        
+
+        //配列に加える
+        yasaiArray.append(imageView)
     }
     
+    @IBAction func push(){
+        //画面にある画像全削除
+        for imageView in yasaiArray{
+            imageView.removeFromSuperview()
+        }
+        yasaiArray.removeAll()
+    }
+    
+    @IBAction func back(){
+        if yasaiArray.count != 0 {
+            yasaiArray.last?.removeFromSuperview()
+            yasaiArray.removeLast()
+        }
+    }
+    
+    @IBAction func ninjin(){
+        imageIndex = 0
+    }
+    
+    @IBAction func tomato(){
+        imageIndex = 1
+    }
+    
+    func tapSingle(sender: UITapGestureRecognizer) {
+        print("タップされました")
+    }
+    
+
     
 }
