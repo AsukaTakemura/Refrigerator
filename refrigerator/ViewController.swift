@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.addImageView(gesture:)))
         self.view.addGestureRecognizer(singleTap)
-        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         imageView.center = gesture.location(in: self.view)
         
         //ジェスチャーを加える
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapSingle(gesture:)))
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapSingle(sender:)))
         imageView.addGestureRecognizer(singleTap)
         
         /* パンジェスチャーをimageViewに追加 (2行) ドラッグした時のメソッドは下にあるよ */
@@ -76,11 +76,11 @@ class ViewController: UIViewController {
     func tapSingle(gesture: UITapGestureRecognizer) {
         performSegue(withIdentifier: "tosetting", sender: nil)
     }
-
+    
     /* ドラッグした時のメソッド */
     /* 内容はgesuture.viewの中心座標をgesture.locationの位置にする */
-
+    
 }
 
-    
+
 
