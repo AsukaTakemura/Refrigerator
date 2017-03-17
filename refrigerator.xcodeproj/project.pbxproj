@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		171838DB1E470F2800A9A9FF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171838DA1E470F2800A9A9FF /* SettingViewController.swift */; };
+		171838DB1E470F2800A9A9FF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171838DA1E470F2800A9A9FF /* AddViewController.swift */; };
 		171838DE1E47127000A9A9FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171838DC1E47127000A9A9FF /* Main.storyboard */; };
+		1723BFE41E6BB51C000AC2F3 /* reizouko.png in Resources */ = {isa = PBXBuildFile; fileRef = 1723BFE31E6BB51C000AC2F3 /* reizouko.png */; };
+		1723BFE61E6BBCE7000AC2F3 /* LINE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1723BFE51E6BBCE7000AC2F3 /* LINE.jpg */; };
 		1762CDAB1E347BC90091BA93 /* ninjin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAA1E347BC90091BA93 /* ninjin2.png */; };
 		1762CDB01E347CC20091BA93 /* tomato.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAC1E347CC20091BA93 /* tomato.png */; };
 		1762CDB11E347CC20091BA93 /* corn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAD1E347CC20091BA93 /* corn.png */; };
@@ -40,8 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		171838DA1E470F2800A9A9FF /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		171838DA1E470F2800A9A9FF /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		171838DD1E47127000A9A9FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1723BFE31E6BB51C000AC2F3 /* reizouko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reizouko.png; sourceTree = "<group>"; };
+		1723BFE51E6BBCE7000AC2F3 /* LINE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LINE.jpg; sourceTree = "<group>"; };
 		1762CDAA1E347BC90091BA93 /* ninjin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ninjin2.png; sourceTree = "<group>"; };
 		1762CDAC1E347CC20091BA93 /* tomato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tomato.png; sourceTree = "<group>"; };
 		1762CDAD1E347CC20091BA93 /* corn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corn.png; sourceTree = "<group>"; };
@@ -110,14 +114,16 @@
 			isa = PBXGroup;
 			children = (
 				177D81201E220A6A00486943 /* AppDelegate.swift */,
+				1723BFE31E6BB51C000AC2F3 /* reizouko.png */,
 				1762CDAA1E347BC90091BA93 /* ninjin2.png */,
 				1762CDAC1E347CC20091BA93 /* tomato.png */,
 				1762CDAD1E347CC20091BA93 /* corn.png */,
+				1723BFE51E6BBCE7000AC2F3 /* LINE.jpg */,
 				1762CDAE1E347CC20091BA93 /* onion.png */,
 				1762CDAF1E347CC20091BA93 /* daion.png */,
 				177D81221E220A6A00486943 /* ViewController.swift */,
 				171838DC1E47127000A9A9FF /* Main.storyboard */,
-				171838DA1E470F2800A9A9FF /* SettingViewController.swift */,
+				171838DA1E470F2800A9A9FF /* AddViewController.swift */,
 				177D81271E220A6A00486943 /* Assets.xcassets */,
 				177D81291E220A6A00486943 /* LaunchScreen.storyboard */,
 				177D812C1E220A6A00486943 /* Info.plist */,
@@ -257,7 +263,9 @@
 				177D81281E220A6A00486943 /* Assets.xcassets in Resources */,
 				1762CDAB1E347BC90091BA93 /* ninjin2.png in Resources */,
 				1762CDB11E347CC20091BA93 /* corn.png in Resources */,
+				1723BFE61E6BBCE7000AC2F3 /* LINE.jpg in Resources */,
 				1762CDB31E347CC20091BA93 /* daion.png in Resources */,
+				1723BFE41E6BB51C000AC2F3 /* reizouko.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				171838DB1E470F2800A9A9FF /* SettingViewController.swift in Sources */,
+				171838DB1E470F2800A9A9FF /* AddViewController.swift in Sources */,
 				177D81231E220A6A00486943 /* ViewController.swift in Sources */,
 				177D81211E220A6A00486943 /* AppDelegate.swift in Sources */,
 			);
