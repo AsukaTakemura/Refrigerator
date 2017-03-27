@@ -11,6 +11,12 @@
 		171838DE1E47127000A9A9FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171838DC1E47127000A9A9FF /* Main.storyboard */; };
 		1723BFE41E6BB51C000AC2F3 /* reizouko.png in Resources */ = {isa = PBXBuildFile; fileRef = 1723BFE31E6BB51C000AC2F3 /* reizouko.png */; };
 		1723BFE61E6BBCE7000AC2F3 /* LINE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1723BFE51E6BBCE7000AC2F3 /* LINE.jpg */; };
+		172EBB581E88EB09003CC7A1 /* kyuuri.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB521E88EB08003CC7A1 /* kyuuri.png */; };
+		172EBB591E88EB09003CC7A1 /* hourensou.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB531E88EB09003CC7A1 /* hourensou.png */; };
+		172EBB5A1E88EB09003CC7A1 /* piman.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB541E88EB09003CC7A1 /* piman.png */; };
+		172EBB5B1E88EB09003CC7A1 /* kabotya.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB551E88EB09003CC7A1 /* kabotya.png */; };
+		172EBB5C1E88EB09003CC7A1 /* nasu.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB561E88EB09003CC7A1 /* nasu.png */; };
+		172EBB5D1E88EB09003CC7A1 /* kyabetsu.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB571E88EB09003CC7A1 /* kyabetsu.png */; };
 		1762CDAB1E347BC90091BA93 /* ninjin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAA1E347BC90091BA93 /* ninjin2.png */; };
 		1762CDB01E347CC20091BA93 /* tomato.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAC1E347CC20091BA93 /* tomato.png */; };
 		1762CDB11E347CC20091BA93 /* corn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAD1E347CC20091BA93 /* corn.png */; };
@@ -22,6 +28,7 @@
 		177D812B1E220A6A00486943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177D81291E220A6A00486943 /* LaunchScreen.storyboard */; };
 		177D81361E220A6A00486943 /* refrigeratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81351E220A6A00486943 /* refrigeratorTests.swift */; };
 		177D81411E220A6A00486943 /* refrigeratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81401E220A6A00486943 /* refrigeratorUITests.swift */; };
+		17E36E5E1E88AADA002DB0B3 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +53,12 @@
 		171838DD1E47127000A9A9FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1723BFE31E6BB51C000AC2F3 /* reizouko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reizouko.png; sourceTree = "<group>"; };
 		1723BFE51E6BBCE7000AC2F3 /* LINE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LINE.jpg; sourceTree = "<group>"; };
+		172EBB521E88EB08003CC7A1 /* kyuuri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kyuuri.png; sourceTree = "<group>"; };
+		172EBB531E88EB09003CC7A1 /* hourensou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourensou.png; sourceTree = "<group>"; };
+		172EBB541E88EB09003CC7A1 /* piman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piman.png; sourceTree = "<group>"; };
+		172EBB551E88EB09003CC7A1 /* kabotya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kabotya.png; sourceTree = "<group>"; };
+		172EBB561E88EB09003CC7A1 /* nasu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nasu.png; sourceTree = "<group>"; };
+		172EBB571E88EB09003CC7A1 /* kyabetsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kyabetsu.png; sourceTree = "<group>"; };
 		1762CDAA1E347BC90091BA93 /* ninjin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ninjin2.png; sourceTree = "<group>"; };
 		1762CDAC1E347CC20091BA93 /* tomato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tomato.png; sourceTree = "<group>"; };
 		1762CDAD1E347CC20091BA93 /* corn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corn.png; sourceTree = "<group>"; };
@@ -63,6 +76,7 @@
 		177D813C1E220A6A00486943 /* refrigeratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = refrigeratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		177D81401E220A6A00486943 /* refrigeratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = refrigeratorUITests.swift; sourceTree = "<group>"; };
 		177D81421E220A6A00486943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,12 +135,19 @@
 				1723BFE51E6BBCE7000AC2F3 /* LINE.jpg */,
 				1762CDAE1E347CC20091BA93 /* onion.png */,
 				1762CDAF1E347CC20091BA93 /* daion.png */,
+				172EBB521E88EB08003CC7A1 /* kyuuri.png */,
+				172EBB531E88EB09003CC7A1 /* hourensou.png */,
+				172EBB541E88EB09003CC7A1 /* piman.png */,
+				172EBB551E88EB09003CC7A1 /* kabotya.png */,
+				172EBB561E88EB09003CC7A1 /* nasu.png */,
+				172EBB571E88EB09003CC7A1 /* kyabetsu.png */,
 				177D81221E220A6A00486943 /* ViewController.swift */,
 				171838DC1E47127000A9A9FF /* Main.storyboard */,
 				171838DA1E470F2800A9A9FF /* AddViewController.swift */,
 				177D81271E220A6A00486943 /* Assets.xcassets */,
 				177D81291E220A6A00486943 /* LaunchScreen.storyboard */,
 				177D812C1E220A6A00486943 /* Info.plist */,
+				17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */,
 			);
 			path = refrigerator;
 			sourceTree = "<group>";
@@ -259,10 +280,16 @@
 				1762CDB01E347CC20091BA93 /* tomato.png in Resources */,
 				177D812B1E220A6A00486943 /* LaunchScreen.storyboard in Resources */,
 				1762CDB21E347CC20091BA93 /* onion.png in Resources */,
+				172EBB581E88EB09003CC7A1 /* kyuuri.png in Resources */,
+				172EBB591E88EB09003CC7A1 /* hourensou.png in Resources */,
 				171838DE1E47127000A9A9FF /* Main.storyboard in Resources */,
 				177D81281E220A6A00486943 /* Assets.xcassets in Resources */,
+				172EBB5D1E88EB09003CC7A1 /* kyabetsu.png in Resources */,
+				172EBB5B1E88EB09003CC7A1 /* kabotya.png in Resources */,
+				172EBB5A1E88EB09003CC7A1 /* piman.png in Resources */,
 				1762CDAB1E347BC90091BA93 /* ninjin2.png in Resources */,
 				1762CDB11E347CC20091BA93 /* corn.png in Resources */,
+				172EBB5C1E88EB09003CC7A1 /* nasu.png in Resources */,
 				1723BFE61E6BBCE7000AC2F3 /* LINE.jpg in Resources */,
 				1762CDB31E347CC20091BA93 /* daion.png in Resources */,
 				1723BFE41E6BB51C000AC2F3 /* reizouko.png in Resources */,
@@ -290,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E36E5E1E88AADA002DB0B3 /* TestCollectionViewController.swift in Sources */,
 				171838DB1E470F2800A9A9FF /* AddViewController.swift in Sources */,
 				177D81231E220A6A00486943 /* ViewController.swift in Sources */,
 				177D81211E220A6A00486943 /* AppDelegate.swift in Sources */,
