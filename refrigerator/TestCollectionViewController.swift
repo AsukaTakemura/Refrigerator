@@ -18,9 +18,21 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     
     var imageIndex: Int = 0
-    var yasaiArray: [UIImageView] = []
+    var judgeIndex: Int = 0
     
-    var reizoukoArray: [UIImage] = [UIImage(named: "ninjin2.png")!,UIImage(named: "tomato.png")!,UIImage(named: "corn.png")!,UIImage(named: "onion.png")!,UIImage(named: "daion.png")!,UIImage(named: "kyuuri.png")!,UIImage(named: "kyabetsu.png")!,UIImage(named: "nasu.png")!,UIImage(named: "piman.png")!,UIImage(named: "hourensou.png")!,UIImage(named: "kabotya.png")!]
+    
+    
+    var yasaiArray: [UIImageView] = []
+    var namamonoArray: [UIImageView] = []
+    var drinkArray: [UIImageView] = []
+    
+    var yasai2Array: [UIImage] = [UIImage(named: "ninjin2.png")!,UIImage(named: "tomato.png")!,UIImage(named: "corn.png")!,UIImage(named: "onion.png")!,UIImage(named: "daion.png")!,UIImage(named: "kyuuri.png")!,UIImage(named: "kyabetsu.png")!,UIImage(named: "nasu.png")!,UIImage(named: "piman.png")!,UIImage(named: "hourensou.png")!,UIImage(named: "kabotya.png")!]
+    
+    var namamono2Array: [UIImage] = [UIImage(named: "tori.png")!,UIImage(named: "usi.png")!,UIImage(named: "buta.png")!,UIImage(named: "sake.png")!,UIImage(named: "kai.png")!]
+    
+    var drink2Array: [UIImage] = [UIImage(named: "tea.png")!,UIImage(named: "milk.png")!,UIImage(named: "juice.png")!]
+    
+    
     
     var label: UILabel!
     
@@ -49,7 +61,9 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         
         var imageview = UIImageView()
         
-        imageview.image = reizoukoArray[indexPath.row]
+        
+        
+        imageview.image = yasai2Array[indexPath.row]
         
         cell.backgroundView = imageview
     
@@ -80,7 +94,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func addImageView(gesture: UIGestureRecognizer) {
         //画像作成
-        let image = reizoukoArray[imageIndex]
+        let image = yasai2Array[imageIndex]
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         imageView.image = image
         imageView.center = gesture.location(in: self.view)
@@ -109,6 +123,19 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             imageView.removeFromSuperview()
         }
         yasaiArray.removeAll()
+    }
+    
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            print("野菜")
+        case 1:
+            print("飲み物")
+        case 2:
+            print("生もの")
+        default:
+            break
+        }
     }
     
     @IBAction func back(){

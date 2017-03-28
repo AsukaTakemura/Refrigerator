@@ -10,13 +10,23 @@
 		171838DB1E470F2800A9A9FF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171838DA1E470F2800A9A9FF /* AddViewController.swift */; };
 		171838DE1E47127000A9A9FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171838DC1E47127000A9A9FF /* Main.storyboard */; };
 		1723BFE41E6BB51C000AC2F3 /* reizouko.png in Resources */ = {isa = PBXBuildFile; fileRef = 1723BFE31E6BB51C000AC2F3 /* reizouko.png */; };
-		1723BFE61E6BBCE7000AC2F3 /* LINE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1723BFE51E6BBCE7000AC2F3 /* LINE.jpg */; };
+		1723BFE61E6BBCE7000AC2F3 /* j.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1723BFE51E6BBCE7000AC2F3 /* j.jpg */; };
 		172EBB581E88EB09003CC7A1 /* kyuuri.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB521E88EB08003CC7A1 /* kyuuri.png */; };
 		172EBB591E88EB09003CC7A1 /* hourensou.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB531E88EB09003CC7A1 /* hourensou.png */; };
 		172EBB5A1E88EB09003CC7A1 /* piman.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB541E88EB09003CC7A1 /* piman.png */; };
 		172EBB5B1E88EB09003CC7A1 /* kabotya.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB551E88EB09003CC7A1 /* kabotya.png */; };
 		172EBB5C1E88EB09003CC7A1 /* nasu.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB561E88EB09003CC7A1 /* nasu.png */; };
 		172EBB5D1E88EB09003CC7A1 /* kyabetsu.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB571E88EB09003CC7A1 /* kyabetsu.png */; };
+		172EBB5F1E8A3C9F003CC7A1 /* reizouko.gif in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB5E1E8A3C9F003CC7A1 /* reizouko.gif */; };
+		172EBB691E8A467A003CC7A1 /* milk.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB601E8A467A003CC7A1 /* milk.png */; };
+		172EBB6A1E8A467A003CC7A1 /* juice.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB611E8A467A003CC7A1 /* juice.png */; };
+		172EBB6B1E8A467A003CC7A1 /* kai.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB621E8A467A003CC7A1 /* kai.png */; };
+		172EBB6C1E8A467A003CC7A1 /* sashimi.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB631E8A467A003CC7A1 /* sashimi.png */; };
+		172EBB6D1E8A467A003CC7A1 /* sake.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB641E8A467A003CC7A1 /* sake.png */; };
+		172EBB6E1E8A467A003CC7A1 /* buta.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB651E8A467A003CC7A1 /* buta.png */; };
+		172EBB6F1E8A467A003CC7A1 /* usi.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB661E8A467A003CC7A1 /* usi.png */; };
+		172EBB701E8A467A003CC7A1 /* tori.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB671E8A467A003CC7A1 /* tori.png */; };
+		172EBB711E8A467A003CC7A1 /* tea.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB681E8A467A003CC7A1 /* tea.png */; };
 		1762CDAB1E347BC90091BA93 /* ninjin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAA1E347BC90091BA93 /* ninjin2.png */; };
 		1762CDB01E347CC20091BA93 /* tomato.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAC1E347CC20091BA93 /* tomato.png */; };
 		1762CDB11E347CC20091BA93 /* corn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAD1E347CC20091BA93 /* corn.png */; };
@@ -52,13 +62,23 @@
 		171838DA1E470F2800A9A9FF /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		171838DD1E47127000A9A9FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1723BFE31E6BB51C000AC2F3 /* reizouko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reizouko.png; sourceTree = "<group>"; };
-		1723BFE51E6BBCE7000AC2F3 /* LINE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LINE.jpg; sourceTree = "<group>"; };
+		1723BFE51E6BBCE7000AC2F3 /* j.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = j.jpg; sourceTree = "<group>"; };
 		172EBB521E88EB08003CC7A1 /* kyuuri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kyuuri.png; sourceTree = "<group>"; };
 		172EBB531E88EB09003CC7A1 /* hourensou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourensou.png; sourceTree = "<group>"; };
 		172EBB541E88EB09003CC7A1 /* piman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piman.png; sourceTree = "<group>"; };
 		172EBB551E88EB09003CC7A1 /* kabotya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kabotya.png; sourceTree = "<group>"; };
 		172EBB561E88EB09003CC7A1 /* nasu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nasu.png; sourceTree = "<group>"; };
 		172EBB571E88EB09003CC7A1 /* kyabetsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kyabetsu.png; sourceTree = "<group>"; };
+		172EBB5E1E8A3C9F003CC7A1 /* reizouko.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = reizouko.gif; sourceTree = "<group>"; };
+		172EBB601E8A467A003CC7A1 /* milk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = milk.png; sourceTree = "<group>"; };
+		172EBB611E8A467A003CC7A1 /* juice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juice.png; sourceTree = "<group>"; };
+		172EBB621E8A467A003CC7A1 /* kai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kai.png; sourceTree = "<group>"; };
+		172EBB631E8A467A003CC7A1 /* sashimi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sashimi.png; sourceTree = "<group>"; };
+		172EBB641E8A467A003CC7A1 /* sake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sake.png; sourceTree = "<group>"; };
+		172EBB651E8A467A003CC7A1 /* buta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buta.png; sourceTree = "<group>"; };
+		172EBB661E8A467A003CC7A1 /* usi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usi.png; sourceTree = "<group>"; };
+		172EBB671E8A467A003CC7A1 /* tori.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tori.png; sourceTree = "<group>"; };
+		172EBB681E8A467A003CC7A1 /* tea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tea.png; sourceTree = "<group>"; };
 		1762CDAA1E347BC90091BA93 /* ninjin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ninjin2.png; sourceTree = "<group>"; };
 		1762CDAC1E347CC20091BA93 /* tomato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tomato.png; sourceTree = "<group>"; };
 		1762CDAD1E347CC20091BA93 /* corn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corn.png; sourceTree = "<group>"; };
@@ -132,12 +152,22 @@
 				1762CDAA1E347BC90091BA93 /* ninjin2.png */,
 				1762CDAC1E347CC20091BA93 /* tomato.png */,
 				1762CDAD1E347CC20091BA93 /* corn.png */,
-				1723BFE51E6BBCE7000AC2F3 /* LINE.jpg */,
+				1723BFE51E6BBCE7000AC2F3 /* j.jpg */,
+				172EBB5E1E8A3C9F003CC7A1 /* reizouko.gif */,
 				1762CDAE1E347CC20091BA93 /* onion.png */,
 				1762CDAF1E347CC20091BA93 /* daion.png */,
 				172EBB521E88EB08003CC7A1 /* kyuuri.png */,
 				172EBB531E88EB09003CC7A1 /* hourensou.png */,
 				172EBB541E88EB09003CC7A1 /* piman.png */,
+				172EBB601E8A467A003CC7A1 /* milk.png */,
+				172EBB611E8A467A003CC7A1 /* juice.png */,
+				172EBB621E8A467A003CC7A1 /* kai.png */,
+				172EBB631E8A467A003CC7A1 /* sashimi.png */,
+				172EBB641E8A467A003CC7A1 /* sake.png */,
+				172EBB651E8A467A003CC7A1 /* buta.png */,
+				172EBB661E8A467A003CC7A1 /* usi.png */,
+				172EBB671E8A467A003CC7A1 /* tori.png */,
+				172EBB681E8A467A003CC7A1 /* tea.png */,
 				172EBB551E88EB09003CC7A1 /* kabotya.png */,
 				172EBB561E88EB09003CC7A1 /* nasu.png */,
 				172EBB571E88EB09003CC7A1 /* kyabetsu.png */,
@@ -278,21 +308,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				1762CDB01E347CC20091BA93 /* tomato.png in Resources */,
+				172EBB6E1E8A467A003CC7A1 /* buta.png in Resources */,
 				177D812B1E220A6A00486943 /* LaunchScreen.storyboard in Resources */,
+				172EBB6F1E8A467A003CC7A1 /* usi.png in Resources */,
+				172EBB691E8A467A003CC7A1 /* milk.png in Resources */,
 				1762CDB21E347CC20091BA93 /* onion.png in Resources */,
 				172EBB581E88EB09003CC7A1 /* kyuuri.png in Resources */,
 				172EBB591E88EB09003CC7A1 /* hourensou.png in Resources */,
 				171838DE1E47127000A9A9FF /* Main.storyboard in Resources */,
+				172EBB5F1E8A3C9F003CC7A1 /* reizouko.gif in Resources */,
+				172EBB6C1E8A467A003CC7A1 /* sashimi.png in Resources */,
 				177D81281E220A6A00486943 /* Assets.xcassets in Resources */,
 				172EBB5D1E88EB09003CC7A1 /* kyabetsu.png in Resources */,
+				172EBB6A1E8A467A003CC7A1 /* juice.png in Resources */,
 				172EBB5B1E88EB09003CC7A1 /* kabotya.png in Resources */,
 				172EBB5A1E88EB09003CC7A1 /* piman.png in Resources */,
+				172EBB701E8A467A003CC7A1 /* tori.png in Resources */,
 				1762CDAB1E347BC90091BA93 /* ninjin2.png in Resources */,
 				1762CDB11E347CC20091BA93 /* corn.png in Resources */,
 				172EBB5C1E88EB09003CC7A1 /* nasu.png in Resources */,
-				1723BFE61E6BBCE7000AC2F3 /* LINE.jpg in Resources */,
+				172EBB6D1E8A467A003CC7A1 /* sake.png in Resources */,
+				1723BFE61E6BBCE7000AC2F3 /* j.jpg in Resources */,
 				1762CDB31E347CC20091BA93 /* daion.png in Resources */,
 				1723BFE41E6BB51C000AC2F3 /* reizouko.png in Resources */,
+				172EBB711E8A467A003CC7A1 /* tea.png in Resources */,
+				172EBB6B1E8A467A003CC7A1 /* kai.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
