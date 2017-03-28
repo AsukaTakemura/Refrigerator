@@ -12,6 +12,10 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet var stampView: UIView!
+    
+    @IBOutlet var image:UIImageView!
+    
     
     var imageIndex: Int = 0
     var yasaiArray: [UIImageView] = []
@@ -26,6 +30,13 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         // Do any additional setup after loading the view, typically from a nib.
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(addImageView(gesture:)))
+        self.stampView.addGestureRecognizer(singleTap)
+    
+        
+        self.view.bringSubview(toFront: collectionView)
+        
         
         /*let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.addImageView(gesture:)))
         self.view.addGestureRecognizer(singleTap)*/
@@ -48,6 +59,10 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       print(indexPath.row)
+        
+        
+        imageIndex = indexPath.row
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -61,6 +76,31 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func tapSingle(gesture: UITapGestureRecognizer) {
         performSegue(withIdentifier: "tosetting", sender: nil)
+    }
+    
+    func addImageView(gesture: UIGestureRecognizer) {
+        //画像作成
+        let image = reizoukoArray[imageIndex]
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        imageView.image = image
+        imageView.center = gesture.location(in: self.view)
+        
+        //ジェスチャーを加える
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapSingle(gesture:)))
+        imageView.addGestureRecognizer(singleTap)
+        
+        /* パンジェスチャーをimageViewに追加 (2行) ドラッグした時のメソッドは下にあるよ */
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(dragImage(gesture:)))
+        imageView.addGestureRecognizer(panGesture)
+        
+        
+        
+        imageView.isUserInteractionEnabled = true
+        
+        self.view.addSubview(imageView)
+        
+        //配列に加える
+        yasaiArray.append(imageView)
     }
     
     @IBAction func push(){

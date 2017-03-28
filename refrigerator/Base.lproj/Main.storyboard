@@ -18,10 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LINE.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="J1p-4C-Etw">
-                                <frame key="frameInset" minX="16" minY="20" width="343" height="461"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IgG-cJ-eQJ">
+                                <frame key="frameInset" minY="20" width="375" height="461"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ubl-BZ-176">
                                 <frame key="frameInset" minY="562" width="375" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -35,7 +36,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="I84-bH-bFK">
-                                        <rect key="frame" x="0.0" y="4.5" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="5" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -64,11 +65,17 @@
                                     <action selector="back" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Qc-aO-B5f"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LINE.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="J1p-4C-Etw">
+                                <frame key="frameInset" minX="16" minY="20" width="343" height="461"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="ubl-BZ-176" id="xzP-ss-WZ0"/>
+                        <outlet property="image" destination="J1p-4C-Etw" id="tux-yC-aTH"/>
+                        <outlet property="stampView" destination="IgG-cJ-eQJ" id="ktW-PM-K4D"/>
                         <segue destination="Rd8-PB-lDI" kind="show" identifier="tosetting" id="gb5-RF-tyr"/>
                     </connections>
                 </viewController>
