@@ -14,14 +14,36 @@ class AddViewController: UIViewController {
     @IBOutlet var label: UILabel!
     @IBOutlet var textField2: UITextField!
     @IBOutlet var label2: UILabel!
-    var dictionaryArray: [[String: String]] = [["name": "", "limit_date": ""], ["name": "", "limit_date": ""]]
+    var dictionaryArray: [String:String]!
+    
+    var dicArray:[AnyObject] = []
+    
+    var yasaidetailsArray: [[String: String]] = []
+    var nameArray: [String] = []
+    var limitArray: [String] = []
+    
     let userDefaults = UserDefaults.standard
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        yasaidetailsArray = userDefaults.array(forKey: "yasaidetailsArray") as? [[String : String]] ?? []
+        if yasaidetailsArray.count != 0 {
+            label.text = yasaidetailsArray[0]["name"]
+            label2.text = yasaidetailsArray[0]["limit"]
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        yasaidetailsArray = []
+        for label in yasaidetailsArray{
+            let name = ["name": label]
+            let limit = ["limit": label]
+            nameArray.append(String(describing: name))
+            limitArray.append(String(describing: limit))
+        }
+        userDefaults.set(yasaidetailsArray, forKey: "yasaidetailsArray")
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,18 +59,26 @@ class AddViewController: UIViewController {
         let inputText = textField.text
         label.text = inputText
         
-        dictionaryArray[0]["name"] = inputText
-        dictionaryArray[1]["name"] = inputText
-        
+        nameArray.append(inputText!)
         textField.text = nil
         
         let inputText2 = textField2.text
         label2.text = inputText2
         
-        dictionaryArray[0]["limit_date"] = inputText2
-        dictionaryArray[1]["limit_date"] = inputText2
+        dictionaryArray = [inputText!:inputText2!]
+        
+        dicArray.append(dictionaryArray as AnyObject)
+        
+        //dictionaryArray[1]["limit_date"] = inputText2
         
         textField2.text = nil
+        
+        
+        UserDefaults.standard.set(dicArray, forKey: "ARRAY")
+        
+        //UserDefaults.standard.set(true, forKey: "boolKeyName")
+        //UserDefaults.standard.set(1, forKey: "integerKeyName")
+        
     }
     
     /*

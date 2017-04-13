@@ -124,30 +124,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		177D81141E220A6A00486943 = {
+		172EBB721E8B4A81003CC7A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
-				177D811F1E220A6A00486943 /* refrigerator */,
-				177D81341E220A6A00486943 /* refrigeratorTests */,
-				177D813F1E220A6A00486943 /* refrigeratorUITests */,
-				177D811E1E220A6A00486943 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		177D811E1E220A6A00486943 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				177D811D1E220A6A00486943 /* refrigerator.app */,
-				177D81311E220A6A00486943 /* refrigeratorTests.xctest */,
-				177D813C1E220A6A00486943 /* refrigeratorUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		177D811F1E220A6A00486943 /* refrigerator */ = {
-			isa = PBXGroup;
-			children = (
-				177D81201E220A6A00486943 /* AppDelegate.swift */,
 				1723BFE31E6BB51C000AC2F3 /* reizouko.png */,
 				1762CDAA1E347BC90091BA93 /* ninjin2.png */,
 				1762CDAC1E347CC20091BA93 /* tomato.png */,
@@ -171,6 +150,35 @@
 				172EBB551E88EB09003CC7A1 /* kabotya.png */,
 				172EBB561E88EB09003CC7A1 /* nasu.png */,
 				172EBB571E88EB09003CC7A1 /* kyabetsu.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		177D81141E220A6A00486943 = {
+			isa = PBXGroup;
+			children = (
+				177D811F1E220A6A00486943 /* refrigerator */,
+				177D81341E220A6A00486943 /* refrigeratorTests */,
+				177D813F1E220A6A00486943 /* refrigeratorUITests */,
+				177D811E1E220A6A00486943 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		177D811E1E220A6A00486943 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				177D811D1E220A6A00486943 /* refrigerator.app */,
+				177D81311E220A6A00486943 /* refrigeratorTests.xctest */,
+				177D813C1E220A6A00486943 /* refrigeratorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		177D811F1E220A6A00486943 /* refrigerator */ = {
+			isa = PBXGroup;
+			children = (
+				172EBB721E8B4A81003CC7A1 /* image */,
+				177D81201E220A6A00486943 /* AppDelegate.swift */,
 				177D81221E220A6A00486943 /* ViewController.swift */,
 				171838DC1E47127000A9A9FF /* Main.storyboard */,
 				171838DA1E470F2800A9A9FF /* AddViewController.swift */,
