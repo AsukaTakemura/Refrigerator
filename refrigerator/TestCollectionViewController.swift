@@ -16,12 +16,15 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet var image:UIImageView!
     
+    @IBOutlet var PageControl: UIPageControl!
+    
     private var pageControl: UIPageControl!
     
     var imageIndex: Int = 0
     var judgeIndex: Int = 0
     
     var userDefaults = UserDefaults.standard
+    let saveData: UserDefaults = UserDefaults.standard
     
     var stampArray: [[String: String]] = []
     
@@ -35,9 +38,9 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     var yasai2Array: [UIImage] = [UIImage(named: "ninjin2.png")!,UIImage(named: "tomato.png")!,UIImage(named: "corn.png")!,UIImage(named: "onion.png")!,UIImage(named: "daion.png")!,UIImage(named: "kyuuri.png")!,UIImage(named: "kyabetsu.png")!,UIImage(named: "nasu.png")!,UIImage(named: "piman.png")!,UIImage(named: "hourensou.png")!,UIImage(named: "kabotya.png")!]
     
-    var namamono2Array: [UIImage] = [UIImage(named: "tori.png")!,UIImage(named: "usi.png")!,UIImage(named: "buta.png")!,UIImage(named: "sake.png")!,UIImage(named: "kai.png")!]
+    var namamono2Array: [UIImage] = [UIImage(named: "tori.png")!,UIImage(named: "usi.png")!,UIImage(named: "buta.png")!,UIImage(named: "sake.png")!,UIImage(named: "kai.png")!,UIImage(named: "hituji.png")!]
     
-    var drink2Array: [UIImage] = [UIImage(named: "tea.png")!,UIImage(named: "milk.png")!,UIImage(named: "juice.png")!]
+    var drink2Array: [UIImage] = [UIImage(named: "tea.png")!,UIImage(named: "milk.png")!,UIImage(named: "juice.png")!,UIImage(named: "drink.png")!]
     
     
     
@@ -58,7 +61,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         
         imageArray = yasai2Array
         
-        stampArray = userDefaults.array(forKey: "stampArray") as? [[String : String]] ?? []
+        saveData.set(stampArray, forKey: "stampArray")
         
         for stamp in stampArray{
             //画像作成
@@ -99,7 +102,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             let stamp = ["locationx": String(describing: imageView.frame.origin.x),"locationy": String(describing: imageView.frame.origin.y),"index": String(describing: index)]
             stampArray.append(stamp)
         }
-        userDefaults.set(stampArray, forKey: "stampArray")
+        stampArray = userDefaults.array(forKey: "stampArray") as? [[String : String]] ?? []
     }
     
     
@@ -204,6 +207,14 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         }
         
     }
+    
+    /*@IBAction func change(sender: UIPageControl) {
+     stampView
+     }
+     
+     override func viewDidLoad() {
+     super.viewDidLoad()
+     }*/
     
     
     /* ドラッグした時のメソッド */

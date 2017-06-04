@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1716DEC31ED175910039B005 /* drink.png in Resources */ = {isa = PBXBuildFile; fileRef = 1716DEC21ED175910039B005 /* drink.png */; };
+		1716DEC51ED1761C0039B005 /* hituji.png in Resources */ = {isa = PBXBuildFile; fileRef = 1716DEC41ED1761C0039B005 /* hituji.png */; };
 		171838DB1E470F2800A9A9FF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171838DA1E470F2800A9A9FF /* AddViewController.swift */; };
 		171838DE1E47127000A9A9FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171838DC1E47127000A9A9FF /* Main.storyboard */; };
 		1723BFE41E6BB51C000AC2F3 /* reizouko.png in Resources */ = {isa = PBXBuildFile; fileRef = 1723BFE31E6BB51C000AC2F3 /* reizouko.png */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1716DEC21ED175910039B005 /* drink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drink.png; sourceTree = "<group>"; };
+		1716DEC41ED1761C0039B005 /* hituji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hituji.png; sourceTree = "<group>"; };
 		171838DA1E470F2800A9A9FF /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		171838DD1E47127000A9A9FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1723BFE31E6BB51C000AC2F3 /* reizouko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reizouko.png; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 		172EBB721E8B4A81003CC7A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				1716DEC41ED1761C0039B005 /* hituji.png */,
 				1723BFE31E6BB51C000AC2F3 /* reizouko.png */,
 				1762CDAA1E347BC90091BA93 /* ninjin2.png */,
 				1762CDAC1E347CC20091BA93 /* tomato.png */,
@@ -145,6 +150,7 @@
 				172EBB641E8A467A003CC7A1 /* sake.png */,
 				172EBB651E8A467A003CC7A1 /* buta.png */,
 				172EBB661E8A467A003CC7A1 /* usi.png */,
+				1716DEC21ED175910039B005 /* drink.png */,
 				172EBB671E8A467A003CC7A1 /* tori.png */,
 				172EBB681E8A467A003CC7A1 /* tea.png */,
 				172EBB551E88EB09003CC7A1 /* kabotya.png */,
@@ -331,11 +337,13 @@
 				172EBB6A1E8A467A003CC7A1 /* juice.png in Resources */,
 				172EBB5B1E88EB09003CC7A1 /* kabotya.png in Resources */,
 				172EBB5A1E88EB09003CC7A1 /* piman.png in Resources */,
+				1716DEC31ED175910039B005 /* drink.png in Resources */,
 				172EBB701E8A467A003CC7A1 /* tori.png in Resources */,
 				1762CDAB1E347BC90091BA93 /* ninjin2.png in Resources */,
 				1762CDB11E347CC20091BA93 /* corn.png in Resources */,
 				172EBB5C1E88EB09003CC7A1 /* nasu.png in Resources */,
 				172EBB6D1E8A467A003CC7A1 /* sake.png in Resources */,
+				1716DEC51ED1761C0039B005 /* hituji.png in Resources */,
 				1723BFE61E6BBCE7000AC2F3 /* j.jpg in Resources */,
 				1762CDB31E347CC20091BA93 /* daion.png in Resources */,
 				1723BFE41E6BB51C000AC2F3 /* reizouko.png in Resources */,

@@ -22,12 +22,15 @@ class AddViewController: UIViewController {
     var nameArray: [String] = []
     var limitArray: [String] = []
     
-    let userDefaults = UserDefaults.standard
-    
+    let  userDefaults = UserDefaults.standard
+    let saveData: UserDefaults = UserDefaults.standard
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         yasaidetailsArray = userDefaults.array(forKey: "yasaidetailsArray") as? [[String : String]] ?? []
+        label.text = saveData.object(forKey: "label") as? String
+        label2.text = saveData.object(forKey: "label2") as? String
         if yasaidetailsArray.count != 0 {
             label.text = yasaidetailsArray[0]["name"]
             label2.text = yasaidetailsArray[0]["limit"]
@@ -44,6 +47,7 @@ class AddViewController: UIViewController {
             limitArray.append(String(describing: limit))
         }
         userDefaults.set(yasaidetailsArray, forKey: "yasaidetailsArray")
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,6 +57,9 @@ class AddViewController: UIViewController {
     
     @IBAction func back() {
         self.dismiss(animated: true, completion: nil)
+        saveData.set(label.text, forKey: "label")
+        saveData.set(label2.text, forKey: "label2")
+        saveData.synchronize()
     }
     
     @IBAction func decision() {
@@ -75,6 +82,9 @@ class AddViewController: UIViewController {
         
         
         UserDefaults.standard.set(dicArray, forKey: "ARRAY")
+        saveData.set(label.text, forKey: "label")
+        saveData.set(label2.text, forKey: "label2")
+        saveData.synchronize()
         
         //UserDefaults.standard.set(true, forKey: "boolKeyName")
         //UserDefaults.standard.set(1, forKey: "integerKeyName")
