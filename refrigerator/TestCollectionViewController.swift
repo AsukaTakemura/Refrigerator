@@ -61,7 +61,11 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         
         imageArray = yasai2Array
         
-        saveData.set(stampArray, forKey: "stampArray")
+        // saveData.set(stampArray, forKey: "stampArray")
+        if (userDefaults.object(forKey: "stampArray") != nil) {
+            print("データ有り")
+        }
+        stampArray = userDefaults.array(forKey: "stampArray") as? [[String : String]] ?? []
         
         for stamp in stampArray{
             //画像作成
@@ -95,14 +99,14 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
          self.view.addGestureRecognizer(singleTap)*/
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         stampArray = []
         for imageView in imageViewArray{
             let index: Int = imageArray.index(of: imageView.image!)!
             let stamp = ["locationx": String(describing: imageView.frame.origin.x),"locationy": String(describing: imageView.frame.origin.y),"index": String(describing: index)]
             stampArray.append(stamp)
         }
-        stampArray = userDefaults.array(forKey: "stampArray") as? [[String : String]] ?? []
+       saveData.set(stampArray, forKey: "stampArray")
     }
     
     
