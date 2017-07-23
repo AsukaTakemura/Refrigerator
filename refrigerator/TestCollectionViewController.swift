@@ -16,9 +16,6 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet var image:UIImageView!
     
-    @IBOutlet var PageControl: UIPageControl!
-    
-    private var pageControl: UIPageControl!
     
     var imageIndex: Int = 0
     var judgeIndex: Int = 0
@@ -212,15 +209,6 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         
     }
     
-    /*@IBAction func change(sender: UIPageControl) {
-     stampView
-     }
-     
-     override func viewDidLoad() {
-     super.viewDidLoad()
-     }*/
-    
-    
     /* ドラッグした時のメソッド */
     /* 内容はgesuture.viewの中心座標をgesture.locationの位置にする */
     func dragImage(gesture: UIGestureRecognizer) {
@@ -230,6 +218,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     @IBAction func modoru() {
         self.dismiss(animated: true, completion: nil)
     }
+    
     
 }
 /*
