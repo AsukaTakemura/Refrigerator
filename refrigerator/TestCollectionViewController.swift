@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TestCollectionViewController: UIViewController, UICollectionViewDataSource ,UICollectionViewDelegate{
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var collectionView: UICollectionView!
     
     @IBOutlet var stampView: UIView!
     
     @IBOutlet var image:UIImageView!
     
+    let yasai = Yasai()
     
     var imageIndex: Int = 0
     var judgeIndex: Int = 0
@@ -24,10 +26,6 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     let saveData: UserDefaults = UserDefaults.standard
     
     var stampArray: [[String: String]] = []
-    
-    var yasaiArray: [UIImageView] = []
-    var namamonoArray: [UIImageView] = []
-    var drinkArray: [UIImageView] = []
     
     var imageArray: [UIImage] = []
     var imageViewArray: [UIImageView] = []
@@ -38,11 +36,6 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     var namamono2Array: [UIImage] = [UIImage(named: "tori.png")!,UIImage(named: "usi.png")!,UIImage(named: "buta.png")!,UIImage(named: "sake.png")!,UIImage(named: "kai.png")!,UIImage(named: "hituji.png")!]
     
     var drink2Array: [UIImage] = [UIImage(named: "tea.png")!,UIImage(named: "milk.png")!,UIImage(named: "juice.png")!,UIImage(named: "drink.png")!]
-    
-    
-    
-    var label: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,6 +163,9 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         
         //配列に加える
         imageViewArray.append(imageView)
+        
+        yasai.imagename = "ninjin.png"
+        save()
     }
     
     @IBAction func push(){
@@ -217,6 +213,20 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     @IBAction func modoru() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    func save() {
+        do {
+            let realm = try! Realm()
+            
+            try realm.write {
+                realm.add(self.yasai)
+            }
+        } catch {
+            
+        }
     }
     
     
