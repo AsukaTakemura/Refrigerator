@@ -36,7 +36,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     var namamono2Array: [UIImage] = [UIImage(named: "tori.png")!,UIImage(named: "usi.png")!,UIImage(named: "buta.png")!,UIImage(named: "sake.png")!,UIImage(named: "kai.png")!,UIImage(named: "hituji.png")!]
     
     var drink2Array: [UIImage] = [UIImage(named: "tea.png")!,UIImage(named: "milk.png")!,UIImage(named: "juice.png")!,UIImage(named: "drink.png")!]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

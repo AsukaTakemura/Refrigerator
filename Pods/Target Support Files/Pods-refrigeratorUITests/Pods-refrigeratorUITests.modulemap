@@ -1,0 +1,6 @@
+framework module Pods_refrigeratorUITests {
+  umbrella header "Pods-refrigeratorUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
