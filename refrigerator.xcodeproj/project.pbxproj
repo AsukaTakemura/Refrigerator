@@ -40,6 +40,7 @@
 		177D812B1E220A6A00486943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177D81291E220A6A00486943 /* LaunchScreen.storyboard */; };
 		177D81361E220A6A00486943 /* refrigeratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81351E220A6A00486943 /* refrigeratorTests.swift */; };
 		177D81411E220A6A00486943 /* refrigeratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81401E220A6A00486943 /* refrigeratorUITests.swift */; };
+		1788EA431F356F2300EF8986 /* white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1788EA421F356F2300EF8986 /* white.jpg */; };
 		17E13D111F2450D100050F77 /* Yasai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E13D101F2450D100050F77 /* Yasai.swift */; };
 		17E36E5E1E88AADA002DB0B3 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */; };
 		E9E4B0E3C311566D64EB2D99 /* Pods_refrigeratorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5B1EC6444D8B2DCAE5BE93 /* Pods_refrigeratorUITests.framework */; };
@@ -104,6 +105,7 @@
 		177D813C1E220A6A00486943 /* refrigeratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = refrigeratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		177D81401E220A6A00486943 /* refrigeratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = refrigeratorUITests.swift; sourceTree = "<group>"; };
 		177D81421E220A6A00486943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1788EA421F356F2300EF8986 /* white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white.jpg; sourceTree = "<group>"; };
 		17E13D101F2450D100050F77 /* Yasai.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yasai.swift; sourceTree = "<group>"; };
 		17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
 		18D824E4008553526B42A729 /* Pods-refrigeratorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refrigeratorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-refrigeratorTests/Pods-refrigeratorTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		172EBB721E8B4A81003CC7A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				1788EA421F356F2300EF8986 /* white.jpg */,
 				1716DEC41ED1761C0039B005 /* hituji.png */,
 				1723BFE31E6BB51C000AC2F3 /* reizouko.png */,
 				1762CDAA1E347BC90091BA93 /* ninjin2.png */,
@@ -389,6 +392,7 @@
 				172EBB6A1E8A467A003CC7A1 /* juice.png in Resources */,
 				172EBB5B1E88EB09003CC7A1 /* kabotya.png in Resources */,
 				172EBB5A1E88EB09003CC7A1 /* piman.png in Resources */,
+				1788EA431F356F2300EF8986 /* white.jpg in Resources */,
 				1716DEC31ED175910039B005 /* drink.png in Resources */,
 				172EBB701E8A467A003CC7A1 /* tori.png in Resources */,
 				1762CDAB1E347BC90091BA93 /* ninjin2.png in Resources */,

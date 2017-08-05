@@ -25,7 +25,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     var userDefaults = UserDefaults.standard
     let saveData: UserDefaults = UserDefaults.standard
     
-    var stampArray: [[String: String]] = []
+    var stampArray: [Yasai] = []
     
     var imageArray: [UIImage] = []
     var imageViewArray: [UIImageView] = []
@@ -55,7 +55,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         if (userDefaults.object(forKey: "stampArray") != nil) {
             print("データ有り")
         }
-        stampArray = userDefaults.array(forKey: "stampArray") as? [[String : String]] ?? []
+        stampArray = userDefaults.array(forKey: "stampArray") as? [Yasai] ?? []
         
         for stamp in stampArray{
             //画像作成
@@ -165,6 +165,10 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         imageViewArray.append(imageView)
         
         yasai.imagename = "ninjin.png"
+        yasai.coordinatex = Float(imageView.frame.origin.x)
+        yasai.coordinatey = Float(imageView.frame.origin.y)
+        yasai.date = Date()
+        yasai.name = "人参"
         save()
     }
     
@@ -228,6 +232,13 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             
         }
     }
+    
+    func find() {
+        let realm = try! Realm()
+        stampArray = realm.objects(Yasai)
+        
+    }
+
     
     
 }

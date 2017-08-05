@@ -10,10 +10,10 @@ import RealmSwift
 
 class Yasai: Object {
     dynamic var imagename = String()
-    dynamic var coordinatex = Int()
-    dynamic var coordinatey = Int()
+    dynamic var coordinatex = Float()
+    dynamic var coordinatey = Float()
     dynamic var name = String()
-    dynamic var date = Int()
+    dynamic var date = Date()
     
 }
 
