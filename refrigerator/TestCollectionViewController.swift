@@ -22,8 +22,6 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     var imageIndex: Int = 0
     var judgeIndex: Int = 0
     
-    var userDefaults = UserDefaults.standard
-    let saveData: UserDefaults = UserDefaults.standard
     
     var stampArray: [Yasai] = []
     
@@ -36,10 +34,9 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     var namamono2Array: [UIImage] = [UIImage(named: "tori.png")!,UIImage(named: "usi.png")!,UIImage(named: "buta.png")!,UIImage(named: "sake.png")!,UIImage(named: "kai.png")!,UIImage(named: "hituji.png")!]
     
     var drink2Array: [UIImage] = [UIImage(named: "tea.png")!,UIImage(named: "milk.png")!,UIImage(named: "juice.png")!,UIImage(named: "drink.png")!]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
@@ -51,22 +48,23 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         
         imageArray = yasai2Array
         
-        // saveData.set(stampArray, forKey: "stampArray")
-        if (userDefaults.object(forKey: "stampArray") != nil) {
-            print("データ有り")
-        }
-        stampArray = userDefaults.array(forKey: "stampArray") as? [Yasai] ?? []
+        //保存したスタンプの取り出し
+        //find()
+      //  let realm = try! Realm()
+      //  stampArray = realm.objects(Yasai.self).map{$0}
         
-        for stamp in stampArray{
+
+        //表示
+        for stamp in stampArray {
             //画像作成
-            let image = imageArray[Int(stamp["index"]!)!]
+            let image = UIImage(named: stamp.imagename)!
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             imageView.image = image
-            imageView.frame.origin.x = CGFloat(Double(stamp["locationx"]!)!)
-            imageView.frame.origin.y = CGFloat(Double(stamp["locationy"]!)!)
+            imageView.frame.origin.x = CGFloat(stamp.coordinatex)
+            imageView.frame.origin.y = CGFloat(stamp.coordinatey)
             
             //ジェスチャーを加える
-            let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapSingle(gesture:)))
+            let Tap = UITapGestureRecognizer(target: self, action: #selector(tapSingle(gesture:)))
             imageView.addGestureRecognizer(singleTap)
             
             /* パンジェスチャーをimageViewに追加 */
@@ -83,20 +81,6 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             imageViewArray.append(imageView)
         }
         
-        
-        
-        /*let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.addImageView(gesture:)))
-         self.view.addGestureRecognizer(singleTap)*/
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        stampArray = []
-        for imageView in imageViewArray{
-            let index: Int = imageArray.index(of: imageView.image!)!
-            let stamp = ["locationx": String(describing: imageView.frame.origin.x),"locationy": String(describing: imageView.frame.origin.y),"index": String(describing: index)]
-            stampArray.append(stamp)
-        }
-       saveData.set(stampArray, forKey: "stampArray")
     }
     
     
@@ -105,8 +89,6 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as UICollectionViewCell
         
         let imageview = UIImageView()
-        
-        
         
         imageview.image = imageArray[indexPath.row]
         
@@ -127,15 +109,8 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArray.count
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     func tapSingle(gesture: UITapGestureRecognizer) {
-        //var hoge = dragImage(gesture: <#T##UIGestureRecognizer#>)
-        
         performSegue(withIdentifier: "tosetting", sender: nil)
     }
     
@@ -164,6 +139,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         //配列に加える
         imageViewArray.append(imageView)
         
+        //保存
         yasai.imagename = "ninjin.png"
         yasai.coordinatex = Float(imageView.frame.origin.x)
         yasai.coordinatey = Float(imageView.frame.origin.y)
@@ -172,7 +148,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         save()
     }
     
-    @IBAction func push(){
+    func push(){
         //画面にある画像全削除
         for imageView in imageViewArray{
             imageView.removeFromSuperview()
@@ -180,7 +156,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         imageViewArray.removeAll()
     }
     
-    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+    func segmentedControlChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             print("野菜")
@@ -201,7 +177,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         collectionView.reloadData()
     }
     
-    @IBAction func back(){
+    func back(){
         if imageViewArray.count != 0 {
             imageViewArray.last?.removeFromSuperview()
             imageViewArray.removeLast()
@@ -215,41 +191,27 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         gesture.view?.center = gesture.location(in: self.view)
     }
     
-    @IBAction func modoru() {
+    func modoru() {
         self.dismiss(animated: true, completion: nil)
     }
     
     
     
     func save() {
-        do {
+
             let realm = try! Realm()
             
-            try realm.write {
+            try! realm.write {
                 realm.add(self.yasai)
             }
-        } catch {
-            
-        }
+  
     }
     
     func find() {
         let realm = try! Realm()
-        stampArray = realm.objects(Yasai)
+        stampArray = realm.objects(Yasai.self).map{$0}
         
     }
-
-    
-    
 }
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
- */
 
 
