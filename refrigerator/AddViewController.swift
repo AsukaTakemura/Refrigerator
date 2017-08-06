@@ -14,41 +14,20 @@ class AddViewController: UIViewController {
     @IBOutlet var label: UILabel!
     @IBOutlet var textField2: UITextField!
     @IBOutlet var label2: UILabel!
+    
+    var tag: Int!
     var dictionaryArray: [String:String]!
-    
     var dicArray:[AnyObject] = []
-    
-    var yasaidetailsArray: [[String: String]] = []
     var nameArray: [String] = []
     var limitArray: [String] = []
     
-    let  userDefaults = UserDefaults.standard
-    let saveData: UserDefaults = UserDefaults.standard
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        yasaidetailsArray = userDefaults.array(forKey: "yasaidetailsArray") as? [[String : String]] ?? []
-        label.text = saveData.object(forKey: "label") as? String
-        label2.text = saveData.object(forKey: "label2") as? String
-        if yasaidetailsArray.count != 0 {
-            label.text = yasaidetailsArray[0]["name"]
-            label2.text = yasaidetailsArray[0]["limit"]
-        }
+        print(tag)
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        yasaidetailsArray = []
-        for label in yasaidetailsArray{
-            let name = ["name": label]
-            let limit = ["limit": label]
-            nameArray.append(String(describing: name))
-            limitArray.append(String(describing: limit))
-        }
-        userDefaults.set(yasaidetailsArray, forKey: "yasaidetailsArray")
-        
-    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,9 +36,6 @@ class AddViewController: UIViewController {
     
     @IBAction func back() {
         self.dismiss(animated: true, completion: nil)
-        saveData.set(label.text, forKey: "label")
-        saveData.set(label2.text, forKey: "label2")
-        saveData.synchronize()
     }
     
     @IBAction func decision() {
@@ -79,16 +55,6 @@ class AddViewController: UIViewController {
         //dictionaryArray[1]["limit_date"] = inputText2
         
         textField2.text = nil
-        
-        
-        UserDefaults.standard.set(dicArray, forKey: "ARRAY")
-        saveData.set(label.text, forKey: "label")
-        saveData.set(label2.text, forKey: "label2")
-        saveData.synchronize()
-        
-        //UserDefaults.standard.set(true, forKey: "boolKeyName")
-        //UserDefaults.standard.set(1, forKey: "integerKeyName")
-        
     }
     
     /*
