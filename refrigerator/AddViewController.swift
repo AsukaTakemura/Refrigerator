@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddViewController: UIViewController {
     
@@ -24,6 +25,10 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(tag)
+        
+        let realm = try! Realm()
+        print(realm.objects(Yasai.self))
+        
         // Do any additional setup after loading the view.
     }
     

@@ -97,7 +97,6 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         
-        
         imageIndex = indexPath.row
         
     }
