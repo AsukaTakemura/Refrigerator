@@ -12,8 +12,8 @@ class Yasai: Object {
     dynamic var imagename = String()
     dynamic var coordinatex = Float()
     dynamic var coordinatey = Float()
-    dynamic var name = String()
-    dynamic var date = Date()
+    dynamic var name: String = ""
+    dynamic var date = String() // 賞味期限
     
 }
 

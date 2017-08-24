@@ -21,6 +21,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     var judgeIndex: Int = 0
     
     var tag: Int = 0
+    var selectedIndex : Int = 0
     var stampArray: [Yasai] = []
     
     var imageArray: [String] = []
@@ -48,7 +49,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         //保存したスタンプの取り出し
         let realm = try! Realm()
         stampArray = realm.objects(Yasai.self).map{$0}
-        
+        print(stampArray)
         
         //表示
         for stamp in stampArray {
@@ -107,7 +108,14 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func tapSingle(gesture: UITapGestureRecognizer) {
         //tagの受け渡し
-        tag = gesture.view!.tag
+//        tag = gesture.view!.tag
+        if let tag = gesture.view?.tag {
+            selectedIndex = tag
+        } else {
+            print("no tag")
+            return
+        }
+        print(selectedIndex)
         performSegue(withIdentifier: "tosetting", sender: nil)
     }
     
@@ -141,7 +149,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         yasai.imagename =  imageName
         yasai.coordinatex = Float(imageView.frame.origin.x)
         yasai.coordinatey = Float(imageView.frame.origin.y)
-        yasai.date = Date()
+        yasai.date = String()
         yasai.name = "人参"
         
         let realm = try! Realm()
@@ -202,7 +210,9 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let addViewController: AddViewController = segue.destination as! AddViewController
-        addViewController.tag = self.tag
+//        addViewController.tag = self.tag
+        addViewController.index = self.selectedIndex
+        
     }
 }
 
