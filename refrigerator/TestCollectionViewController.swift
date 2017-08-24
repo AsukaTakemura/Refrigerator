@@ -34,10 +34,55 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     var drink2Array: [String] = ["tea.png","milk.png","juice.png","drink.png"]
     
+    let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        
+        //        let singleTap = UITapGestureRecognizer(target: self, action: #selector(addImageView(gesture:)))
+        //        self.stampView.addGestureRecognizer(singleTap)
+        //
+        //        self.view.bringSubview(toFront: collectionView)
+        //
+        //        imageArray = yasai2Array
+        //
+        //        //保存したスタンプの取り出し
+        //        let realm = try! Realm()
+        //        stampArray = realm.objects(Yasai.self).map{$0}
+        //        print(stampArray)
+        //
+        //        //表示
+        //        for stamp in stampArray {
+        //            //画像作成
+        //            let image = UIImage(named: stamp.imagename)!
+        //            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        //            imageView.image = image
+        //            imageView.frame.origin.x = CGFloat(stamp.coordinatex)
+        //            imageView.frame.origin.y = CGFloat(stamp.coordinatey)
+        //
+        //            //ジェスチャーを加える
+        //            let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapSingle(gesture:)))
+        //            imageView.addGestureRecognizer(singleTap)
+        //
+        //            /* パンジェスチャーをimageViewに追加 */
+        //            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(dragImage(gesture:)))
+        //            imageView.addGestureRecognizer(panGesture)
+        //
+        //            imageView.tag = imageViewArray.count + 1
+        //
+        //            imageView.isUserInteractionEnabled = true
+        //
+        //            self.view.addSubview(imageView)
+        //
+        //            //配列に加える
+        //            imageViewArray.append(imageView)
+        //        }
+        
+    }
+    
+    func setStamps() {
         
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(addImageView(gesture:)))
         self.stampView.addGestureRecognizer(singleTap)
@@ -47,13 +92,14 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         imageArray = yasai2Array
         
         //保存したスタンプの取り出し
-        let realm = try! Realm()
         stampArray = realm.objects(Yasai.self).map{$0}
         print(stampArray)
         
         //表示
-        for stamp in stampArray {
+        imageViewArray = []
+        for i in 0 ..< stampArray.count {
             //画像作成
+            let stamp = stampArray[i]
             let image = UIImage(named: stamp.imagename)!
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             imageView.image = image
@@ -68,7 +114,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             let panGesture = UIPanGestureRecognizer(target: self, action: #selector(dragImage(gesture:)))
             imageView.addGestureRecognizer(panGesture)
             
-            imageView.tag = imageViewArray.count + 1
+            imageView.tag = i + 1
             
             imageView.isUserInteractionEnabled = true
             
@@ -76,6 +122,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             
             //配列に加える
             imageViewArray.append(imageView)
+            
         }
         
     }
@@ -108,7 +155,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func tapSingle(gesture: UITapGestureRecognizer) {
         //tagの受け渡し
-//        tag = gesture.view!.tag
+        //        tag = gesture.view!.tag
         if let tag = gesture.view?.tag {
             selectedIndex = tag
         } else {
@@ -207,10 +254,10 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         self.dismiss(animated: true, completion: nil)
     }
     
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let addViewController: AddViewController = segue.destination as! AddViewController
-//        addViewController.tag = self.tag
+        //        addViewController.tag = self.tag
         addViewController.index = self.selectedIndex
         
     }

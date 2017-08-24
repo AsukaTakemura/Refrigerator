@@ -24,6 +24,8 @@ class AddViewController: UIViewController {
     var limitArray: [String] = []
     var stampArray: [Yasai] = []
     
+    var isDoneSave = false
+    
     let realm = try! Realm()
     
     var objectIndex: Int! // 前のtableviewで選ばれたcellのindexPath.row(realmにある配列の添字)
@@ -37,6 +39,8 @@ class AddViewController: UIViewController {
         print(realm.objects(Yasai.self))
         stampArray = realm.objects(Yasai.self).map{$0}
         object = stampArray[index]
+        textField.placeholder = object.name
+        textField2.placeholder = object.date
         // Do any additional setup after loading the view.
     }
     
@@ -52,16 +56,26 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func decision() {
+        
+        if isDoneSave {
+            return
+        }
+        
         guard let inputText = textField.text else { return }
         guard let inputText2 = textField2.text else { return }
         label.text = inputText
         
+        label2.text = inputText2
+        
         print(stampArray)
         print(index)
-//        let oldYasaiDate = stampArray[index]
-//        var newYasaiDate = Yasai()
+        //        let oldYasaiDate = stampArray[index]
+        //        var newYasaiDate = Yasai()
         
         let newYasai = Yasai()
+        newYasai.imagename = object.imagename
+        newYasai.coordinatex = object.coordinatex
+        newYasai.coordinatey = object.coordinatey
         newYasai.name = inputText
         newYasai.date = inputText2
         
@@ -72,21 +86,21 @@ class AddViewController: UIViewController {
             // プライマリキーを設定しておけば1行でupdateができるがプライマリキーの設定に何行も要するので今回は簡単に書くために、削除して追加する方法を採用した
         }
         
-//        newYasaiDate = oldYasaiDate
-////
-////        newYasaiDate.name = inputText
-////        newYasaiDate.date = inputText2
-//        newYasaiDate.name = inputText
-//                newYasaiDate.date = inputText2
-//        
-//        try! realm.write() {
-//            
-////            realm.delete(oldYasaiDate)
-////            realm.add(newYasaiDate)
-////            realm.add(newYasaiDate)
-//            realm.add(newYasaiDate, update: true)
-//        }
-//        
+        //        newYasaiDate = oldYasaiDate
+        ////
+        ////        newYasaiDate.name = inputText
+        ////        newYasaiDate.date = inputText2
+        //        newYasaiDate.name = inputText
+        //                newYasaiDate.date = inputText2
+        //
+        //        try! realm.write() {
+        //
+        ////            realm.delete(oldYasaiDate)
+        ////            realm.add(newYasaiDate)
+        ////            realm.add(newYasaiDate)
+        //            realm.add(newYasaiDate, update: true)
+        //        }
+        //
         
         
         //        let inputText = textField.text
