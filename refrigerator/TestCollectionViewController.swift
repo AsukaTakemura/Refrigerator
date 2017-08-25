@@ -41,47 +41,11 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
-        //        let singleTap = UITapGestureRecognizer(target: self, action: #selector(addImageView(gesture:)))
-        //        self.stampView.addGestureRecognizer(singleTap)
-        //
-        //        self.view.bringSubview(toFront: collectionView)
-        //
-        //        imageArray = yasai2Array
-        //
-        //        //保存したスタンプの取り出し
-        //        let realm = try! Realm()
-        //        stampArray = realm.objects(Yasai.self).map{$0}
-        //        print(stampArray)
-        //
-        //        //表示
-        //        for stamp in stampArray {
-        //            //画像作成
-        //            let image = UIImage(named: stamp.imagename)!
-        //            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        //            imageView.image = image
-        //            imageView.frame.origin.x = CGFloat(stamp.coordinatex)
-        //            imageView.frame.origin.y = CGFloat(stamp.coordinatey)
-        //
-        //            //ジェスチャーを加える
-        //            let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapSingle(gesture:)))
-        //            imageView.addGestureRecognizer(singleTap)
-        //
-        //            /* パンジェスチャーをimageViewに追加 */
-        //            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(dragImage(gesture:)))
-        //            imageView.addGestureRecognizer(panGesture)
-        //
-        //            imageView.tag = imageViewArray.count + 1
-        //
-        //            imageView.isUserInteractionEnabled = true
-        //
-        //            self.view.addSubview(imageView)
-        //
-        //            //配列に加える
-        //            imageViewArray.append(imageView)
-        //        }
-        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setStamps()
+    }
     func setStamps() {
         
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(addImageView(gesture:)))
@@ -157,7 +121,8 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         //tagの受け渡し
         //        tag = gesture.view!.tag
         if let tag = gesture.view?.tag {
-            selectedIndex = tag
+            selectedIndex = tag - 1
+            print(selectedIndex)
         } else {
             print("no tag")
             return

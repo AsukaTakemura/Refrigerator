@@ -86,39 +86,7 @@ class AddViewController: UIViewController {
             // プライマリキーを設定しておけば1行でupdateができるがプライマリキーの設定に何行も要するので今回は簡単に書くために、削除して追加する方法を採用した
         }
         
-        //        newYasaiDate = oldYasaiDate
-        ////
-        ////        newYasaiDate.name = inputText
-        ////        newYasaiDate.date = inputText2
-        //        newYasaiDate.name = inputText
-        //                newYasaiDate.date = inputText2
-        //
-        //        try! realm.write() {
-        //
-        ////            realm.delete(oldYasaiDate)
-        ////            realm.add(newYasaiDate)
-        ////            realm.add(newYasaiDate)
-        //            realm.add(newYasaiDate, update: true)
-        //        }
-        //
-        
-        
-        //        let inputText = textField.text
-        //        label.text = inputText
-        //
-        //        nameArray.append(inputText!)
-        //        textField.text = nil
-        //
-        //        let inputText2 = textField2.text
-        //        label2.text = inputText2
-        //
-        //        dictionaryArray = [inputText!:inputText2!]
-        //
-        //        dicArray.append(dictionaryArray as AnyObject)
-        //
-        //        dictionaryArray[1]["limit_date"] = inputText2
-        //
-        //        textField2.text = nil
+      
         
     }
     
