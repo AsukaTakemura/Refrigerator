@@ -63,6 +63,17 @@ class AddViewController: UIViewController {
         
         guard let inputText = textField.text else { return }
         guard let inputText2 = textField2.text else { return }
+        if inputText == "" || inputText2 == "" {
+            let alert: UIAlertController = UIAlertController(title: "文字が入力されていません", message: "文字を入力してください",preferredStyle:  UIAlertControllerStyle.alert)
+            
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+            
+            return
+            
+        }
         label.text = inputText
         
         label2.text = inputText2
@@ -86,7 +97,7 @@ class AddViewController: UIViewController {
             // プライマリキーを設定しておけば1行でupdateができるがプライマリキーの設定に何行も要するので今回は簡単に書くために、削除して追加する方法を採用した
         }
         
-      
+        
         
     }
     

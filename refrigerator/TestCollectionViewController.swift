@@ -20,6 +20,8 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     var imageIndex: Int = 0
     var judgeIndex: Int = 0
     
+    var object: Yasai = Yasai()
+    
     var tag: Int = 0
     var selectedIndex : Int = 0
     var stampArray: [Yasai] = []
@@ -178,6 +180,12 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             imageView.removeFromSuperview()
         }
         imageViewArray.removeAll()
+        
+        let yasaiList = realm.objects(Yasai.self)
+        try! realm.write {
+            realm.delete(yasaiList)
+        }
+        setStamps()
     }
     
     func segmentedControlChanged(_ sender: UISegmentedControl) {
@@ -206,7 +214,17 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             imageViewArray.last?.removeFromSuperview()
             imageViewArray.removeLast()
         }
+        stampArray = realm.objects(Yasai.self).map{$0}
         
+        guard let object = stampArray.last else {
+            return
+        }
+        
+        try! realm.write {
+            realm.delete(object)
+        }
+
+        setStamps()
     }
     
     /* ドラッグした時のメソッド */
