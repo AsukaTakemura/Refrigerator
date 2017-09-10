@@ -77,23 +77,11 @@ class AddViewController: UIViewController {
         
         label2.text = inputText2
         
-        print(stampArray)
-        print(index)
-        //        let oldYasaiDate = stampArray[index]
-        //        var newYasaiDate = Yasai()
-        
-        let newYasai = Yasai()
-        newYasai.imagename = object.imagename
-        newYasai.coordinatex = object.coordinatex
-        newYasai.coordinatey = object.coordinatey
-        newYasai.name = inputText
-        newYasai.date = inputText2
-        
+       
         
         try! realm.write {
-            realm.delete(object) // 古いTextDataを削除
-            realm.add(newYasai) // 新しいデータを代入
-            // プライマリキーを設定しておけば1行でupdateができるがプライマリキーの設定に何行も要するので今回は簡単に書くために、削除して追加する方法を採用した
+            object.name = inputText
+            object.date = inputText2
         }
         
     
