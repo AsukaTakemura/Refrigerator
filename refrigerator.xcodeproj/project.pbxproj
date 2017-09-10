@@ -40,6 +40,7 @@
 		177D812B1E220A6A00486943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177D81291E220A6A00486943 /* LaunchScreen.storyboard */; };
 		177D81361E220A6A00486943 /* refrigeratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81351E220A6A00486943 /* refrigeratorTests.swift */; };
 		177D81411E220A6A00486943 /* refrigeratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81401E220A6A00486943 /* refrigeratorUITests.swift */; };
+		177DCD971F56A54000F70B27 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 177DCD961F56A54000F70B27 /* icon.png */; };
 		1788EA431F356F2300EF8986 /* white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1788EA421F356F2300EF8986 /* white.jpg */; };
 		17E13D111F2450D100050F77 /* Yasai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E13D101F2450D100050F77 /* Yasai.swift */; };
 		17E36E5E1E88AADA002DB0B3 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */; };
@@ -105,6 +106,7 @@
 		177D813C1E220A6A00486943 /* refrigeratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = refrigeratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		177D81401E220A6A00486943 /* refrigeratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = refrigeratorUITests.swift; sourceTree = "<group>"; };
 		177D81421E220A6A00486943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		177DCD961F56A54000F70B27 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		1788EA421F356F2300EF8986 /* white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white.jpg; sourceTree = "<group>"; };
 		17E13D101F2450D100050F77 /* Yasai.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yasai.swift; sourceTree = "<group>"; };
 		17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		172EBB721E8B4A81003CC7A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				177DCD961F56A54000F70B27 /* icon.png */,
 				1788EA421F356F2300EF8986 /* white.jpg */,
 				1716DEC41ED1761C0039B005 /* hituji.png */,
 				1723BFE31E6BB51C000AC2F3 /* reizouko.png */,
@@ -402,6 +405,7 @@
 				1716DEC51ED1761C0039B005 /* hituji.png in Resources */,
 				1723BFE61E6BBCE7000AC2F3 /* j.jpg in Resources */,
 				1762CDB31E347CC20091BA93 /* daion.png in Resources */,
+				177DCD971F56A54000F70B27 /* icon.png in Resources */,
 				1723BFE41E6BB51C000AC2F3 /* reizouko.png in Resources */,
 				172EBB711E8A467A003CC7A1 /* tea.png in Resources */,
 				172EBB6B1E8A467A003CC7A1 /* kai.png in Resources */,

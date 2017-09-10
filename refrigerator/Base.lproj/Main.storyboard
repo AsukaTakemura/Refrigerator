@@ -30,7 +30,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTC-xV-KUN">
-                                        <rect key="frame" x="55" y="94" width="164" height="76"/>
+                                        <rect key="frame" x="55" y="174" width="164" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="冷蔵庫">
                                             <color key="titleColor" red="0.59678073210000004" green="0.80175285529999996" blue="0.60522282429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,20 +38,6 @@
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" id="9iB-ii-Vxe"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNR-uc-484">
-                                        <rect key="frame" x="55" y="185" width="164" height="72"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="冷凍庫">
-                                            <color key="titleColor" red="0.59678073210000004" green="0.80175285529999996" blue="0.60522282429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDa-Ep-k1w">
-                                        <rect key="frame" x="55" y="258" width="164" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="野菜室">
-                                            <color key="titleColor" red="0.59678073210000004" green="0.80175285529999996" blue="0.60522282429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.59678073210000004" green="0.80175285529999996" blue="0.60522282429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.59607843137254901" green="0.80000000000000004" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Am-WE-1OV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -83,17 +69,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IgG-cJ-eQJ">
-                                <rect key="frame" x="0.0" y="53" width="375" height="435"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reizouko.gif" translatesAutoresizingMaskIntoConstraints="NO" id="J1p-4C-Etw">
-                                        <rect key="frame" x="13" y="8" width="354" height="421"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ubl-BZ-176">
                                 <rect key="frame" x="0.0" y="539" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -121,7 +96,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXT-HL-yGv">
-                                <rect key="frame" x="100" y="1" width="59" height="55"/>
+                                <rect key="frame" x="100" y="7" width="59" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="削除">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -131,7 +106,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xue-rA-61d">
-                                <rect key="frame" x="16" y="0.0" width="83" height="56"/>
+                                <rect key="frame" x="16" y="7" width="83" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="一個戻る">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -153,7 +128,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="el3-IF-c9O">
-                                <rect key="frame" x="12" y="501" width="351" height="29"/>
+                                <rect key="frame" x="12" y="503" width="351" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="野菜"/>
@@ -165,6 +140,17 @@
                                     <action selector="segmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cz0-uz-8aZ"/>
                                 </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IgG-cJ-eQJ">
+                                <rect key="frame" x="0.0" y="60" width="375" height="435"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reizouko.gif" translatesAutoresizingMaskIntoConstraints="NO" id="J1p-4C-Etw">
+                                        <rect key="frame" x="13" y="9" width="354" height="421"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.59678073208112192" green="0.80175285532994922" blue="0.60522282426131102" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -267,6 +253,16 @@
                                     <action selector="decision" destination="Rd8-PB-lDI" eventType="touchUpInside" id="sH6-A5-liG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYO-ou-kBM">
+                                <rect key="frame" x="277" y="10" width="65" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="消去">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="lost" destination="Rd8-PB-lDI" eventType="touchUpInside" id="YzF-wp-2Sl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.59678073210000004" green="0.80175285529999996" blue="0.60522282429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -279,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSe-F4-DN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719.2" y="65.217391304347828"/>
+            <point key="canvasLocation" x="1608.8" y="66.11694152923539"/>
         </scene>
     </scenes>
     <resources>

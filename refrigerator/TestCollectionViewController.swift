@@ -62,7 +62,13 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         print(stampArray)
         
         //表示
-        imageViewArray = []
+        for imageView in imageViewArray{
+            imageView.removeFromSuperview()
+            imageViewArray = []
+        }
+        
+        
+        
         for i in 0 ..< stampArray.count {
             //画像作成
             let stamp = stampArray[i]
@@ -136,8 +142,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func addImageView(gesture: UIGestureRecognizer) {
         //画像作成
-        let imageName = imageArray[imageIndex]
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+    
         imageView.image = UIImage(named: imageName)
         imageView.center = gesture.location(in: self.view)
         
@@ -158,19 +163,6 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         //配列に加える
         imageViewArray.append(imageView)
         
-        //保存
-        let yasai = Yasai()
-        yasai.imagename =  imageName
-        yasai.coordinatex = Float(imageView.frame.origin.x)
-        yasai.coordinatey = Float(imageView.frame.origin.y)
-        yasai.date = String()
-        yasai.name = "人参"
-        
-        let realm = try! Realm()
-        
-        try! realm.write {
-            realm.add(yasai)
-        }
         
     }
     
@@ -223,14 +215,15 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         try! realm.write {
             realm.delete(object)
         }
-
-        setStamps()
+        
+        //        setStamps()
     }
     
     /* ドラッグした時のメソッド */
     /* 内容はgesuture.viewの中心座標をgesture.locationの位置にする */
     func dragImage(gesture: UIGestureRecognizer) {
         gesture.view?.center = gesture.location(in: self.view)
+        
     }
     
     func modoru() {
@@ -244,6 +237,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         addViewController.index = self.selectedIndex
         
     }
-}
+    
+    }
 
 

@@ -33,14 +33,13 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        print(tag)
         
         
         print(realm.objects(Yasai.self))
         stampArray = realm.objects(Yasai.self).map{$0}
         object = stampArray[index]
-        textField.placeholder = object.name
-        textField2.placeholder = object.date
+        textField.text = object.name
+        textField2.text = object.date
         // Do any additional setup after loading the view.
     }
     
@@ -97,9 +96,17 @@ class AddViewController: UIViewController {
             // プライマリキーを設定しておけば1行でupdateができるがプライマリキーの設定に何行も要するので今回は簡単に書くために、削除して追加する方法を採用した
         }
         
-        
+    
+    }
+    
+    @IBAction func lost(){
+        try! realm.write() {
+            realm.delete(object)
+        }
         
     }
+    
+
     
     /*
      // MARK: - Navigation
