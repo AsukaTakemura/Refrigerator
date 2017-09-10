@@ -237,6 +237,12 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     /* 内容はgesuture.viewの中心座標をgesture.locationの位置にする */
     func dragImage(gesture: UIGestureRecognizer) {
         gesture.view?.center = gesture.location(in: self.view)
+        let yasai: Yasai = stampArray[gesture.view!.tag-1]
+        
+        try! realm.write {
+            yasai.coordinatex = Float(gesture.view!.frame.origin.x)
+            yasai.coordinatey = Float(gesture.view!.frame.origin.y)
+        }
     }
     
     func modoru() {
@@ -250,6 +256,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         addViewController.index = self.selectedIndex
         
     }
+    
 }
 
 
