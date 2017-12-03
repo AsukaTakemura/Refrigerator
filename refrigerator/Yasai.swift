@@ -14,6 +14,7 @@ class Yasai: Object {
     dynamic var coordinatey = Float()
     dynamic var name: String = ""
     dynamic var date = String() // 賞味期限
+    dynamic var memo: String = ""
     
 }
 

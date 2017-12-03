@@ -8,13 +8,15 @@
 
 import UIKit
 import RealmSwift
+import UserNotifications
 
 class AddViewController: UIViewController {
     
     @IBOutlet var textField: UITextField! // name
     @IBOutlet var label: UILabel!
-    @IBOutlet var textField2: UITextField! // deadline
     @IBOutlet var label2: UILabel!
+    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var TextView: UITextView!
     
     //    var tag: Int!
     var index = 0
@@ -26,6 +28,8 @@ class AddViewController: UIViewController {
     
     var isDoneSave = false
     
+    let formatter = DateFormatter()
+    
     let realm = try! Realm()
     
     var objectIndex: Int! // 前のtableviewで選ばれたcellのindexPath.row(realmにある配列の添字)
@@ -33,13 +37,16 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         print(realm.objects(Yasai.self))
         stampArray = realm.objects(Yasai.self).map{$0}
         object = stampArray[index]
         textField.text = object.name
-        textField2.text = object.date
+        TextView.text = object.memo
+        formatter.dateFormat = "yyyy/MM/dd"
+        let date = formatter.date(from: object.date)
+        self.TextView.layer.borderColor = UIColor(red: 152/255, green: 204/255, blue: 154/255, alpha: 1).cgColor
+        self.TextView.layer.borderWidth = 3
+        // datePicker.date = date!
         // Do any additional setup after loading the view.
     }
     
@@ -61,8 +68,9 @@ class AddViewController: UIViewController {
         }
         
         guard let inputText = textField.text else { return }
-        guard let inputText2 = textField2.text else { return }
-        if inputText == "" || inputText2 == "" {
+        guard let memoText = TextView.text else { return }
+        
+        if inputText == ""{
             let alert: UIAlertController = UIAlertController(title: "文字が入力されていません", message: "文字を入力してください",preferredStyle:  UIAlertControllerStyle.alert)
             
             let action = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -73,18 +81,34 @@ class AddViewController: UIViewController {
             return
             
         }
-        label.text = inputText
         
-        label2.text = inputText2
-        
-       
+        label2.text = formatter.string(from: datePicker.date)
         
         try! realm.write {
             object.name = inputText
-            object.date = inputText2
+            object.date = formatter.string(from: datePicker.date)
+            object.memo = memoText
+            
         }
         
-    
+        let content = UNMutableNotificationContent()
+        var notificationTime = Calendar.current.dateComponents([.calendar,.year,.month,.day], from: datePicker.date)
+        
+        notificationTime.hour = 12
+        notificationTime.minute = 00
+        notificationTime.second = 00
+        
+        print(notificationTime)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: notificationTime, repeats: false)
+        
+        content.title = ""
+        content.body = "もうすぐ賞味期限です"
+        content.sound = UNNotificationSound.default()
+        
+        let request = UNNotificationRequest(identifier: "uuid", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        
     }
     
     @IBAction func lost(){
@@ -94,7 +118,7 @@ class AddViewController: UIViewController {
         
     }
     
-
+    
     
     /*
      // MARK: - Navigation

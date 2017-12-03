@@ -17,6 +17,12 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet var image:UIImageView!
     
+    @IBOutlet var backButton:UIButton!
+    
+    @IBOutlet var deletionButton:UIButton!
+    
+    
+    
     var imageIndex: Int = 0
     var judgeIndex: Int = 0
     
@@ -42,6 +48,9 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         super.viewDidLoad()
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        
+        backButton.layer.cornerRadius = 10
+        deletionButton.layer.cornerRadius = 10
         
     }
     
@@ -127,7 +136,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func tapSingle(gesture: UITapGestureRecognizer) {
         //tagの受け渡し
-        //        tag = gesture.view!.tag
+        // tag = gesture.view!.tag
         if let tag = gesture.view?.tag {
             selectedIndex = tag - 1
             print(selectedIndex)
@@ -215,6 +224,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         collectionView.reloadData()
     }
     
+    
     func back(){
         if imageViewArray.count != 0 {
             imageViewArray.last?.removeFromSuperview()
@@ -229,8 +239,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         try! realm.write {
             realm.delete(object)
         }
-        
-        //        setStamps()
+    
     }
     
     /* ドラッグした時のメソッド */
@@ -247,6 +256,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func modoru() {
         self.dismiss(animated: true, completion: nil)
+        
     }
     
     

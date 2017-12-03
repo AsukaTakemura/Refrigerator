@@ -11,6 +11,7 @@
 		1716DEC51ED1761C0039B005 /* hituji.png in Resources */ = {isa = PBXBuildFile; fileRef = 1716DEC41ED1761C0039B005 /* hituji.png */; };
 		171838DB1E470F2800A9A9FF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171838DA1E470F2800A9A9FF /* AddViewController.swift */; };
 		171838DE1E47127000A9A9FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171838DC1E47127000A9A9FF /* Main.storyboard */; };
+		171DBF081F77585A00F81798 /* Mini.otf in Resources */ = {isa = PBXBuildFile; fileRef = 177DCD981F76D31F00F70B27 /* Mini.otf */; };
 		1723BFE41E6BB51C000AC2F3 /* reizouko.png in Resources */ = {isa = PBXBuildFile; fileRef = 1723BFE31E6BB51C000AC2F3 /* reizouko.png */; };
 		1723BFE61E6BBCE7000AC2F3 /* j.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1723BFE51E6BBCE7000AC2F3 /* j.jpg */; };
 		172EBB581E88EB09003CC7A1 /* kyuuri.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB521E88EB08003CC7A1 /* kyuuri.png */; };
@@ -107,6 +108,7 @@
 		177D81401E220A6A00486943 /* refrigeratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = refrigeratorUITests.swift; sourceTree = "<group>"; };
 		177D81421E220A6A00486943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		177DCD961F56A54000F70B27 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		177DCD981F76D31F00F70B27 /* Mini.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mini.otf; sourceTree = "<group>"; };
 		1788EA421F356F2300EF8986 /* white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white.jpg; sourceTree = "<group>"; };
 		17E13D101F2450D100050F77 /* Yasai.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yasai.swift; sourceTree = "<group>"; };
 		17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		177D811F1E220A6A00486943 /* refrigerator */ = {
 			isa = PBXGroup;
 			children = (
+				177DCD981F76D31F00F70B27 /* Mini.otf */,
 				172EBB721E8B4A81003CC7A1 /* image */,
 				177D81201E220A6A00486943 /* AppDelegate.swift */,
 				17E13D101F2450D100050F77 /* Yasai.swift */,
@@ -379,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				171DBF081F77585A00F81798 /* Mini.otf in Resources */,
 				1762CDB01E347CC20091BA93 /* tomato.png in Resources */,
 				172EBB6E1E8A467A003CC7A1 /* buta.png in Resources */,
 				177D812B1E220A6A00486943 /* LaunchScreen.storyboard in Resources */,
