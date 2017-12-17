@@ -13,10 +13,9 @@ import UserNotifications
 class AddViewController: UIViewController {
     
     @IBOutlet var textField: UITextField! // name
-    @IBOutlet var label: UILabel!
-    @IBOutlet var label2: UILabel!
-    @IBOutlet var datePicker: UIDatePicker!
-    @IBOutlet var TextView: UITextView!
+    @IBOutlet var textField2: UITextField! //date
+    var datePicker = UIDatePicker()
+    @IBOutlet var textView: UITextView!
     
     //    var tag: Int!
     var index = 0
@@ -41,11 +40,26 @@ class AddViewController: UIViewController {
         stampArray = realm.objects(Yasai.self).map{$0}
         object = stampArray[index]
         textField.text = object.name
-        TextView.text = object.memo
+        textView.text = object.memo
+        textField2.text = object.date
         formatter.dateFormat = "yyyy/MM/dd"
         let date = formatter.date(from: object.date)
-        self.TextView.layer.borderColor = UIColor(red: 152/255, green: 204/255, blue: 154/255, alpha: 1).cgColor
-        self.TextView.layer.borderWidth = 3
+        self.textView.layer.borderColor = UIColor(red: 152/255, green: 204/255, blue: 154/255, alpha: 1).cgColor
+        self.textView.layer.borderWidth = 3
+        
+        datePicker.datePickerMode = UIDatePickerMode.date
+        textField2.inputView = datePicker
+        
+        let toolBar = UIToolbar(frame:  CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
+        toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        toolBar.barStyle = .blackTranslucent
+        toolBar.tintColor = UIColor.white
+        toolBar.backgroundColor = UIColor.black
+        let toolBarButton = UIBarButtonItem(title: "完了", style: .bordered, target: self, action:#selector(tappedToolBarButton(sender:)))
+        datePicker.addTarget(self, action: #selector(changedDateEvent(sender:)), for: .valueChanged)
+        toolBarButton.tag = 1
+        toolBar.items = [toolBarButton]
+        textField2.inputAccessoryView = toolBar
         // datePicker.date = date!
         // Do any additional setup after loading the view.
     }
@@ -68,7 +82,7 @@ class AddViewController: UIViewController {
         }
         
         guard let inputText = textField.text else { return }
-        guard let memoText = TextView.text else { return }
+        guard let memoText = textView.text else { return }
         
         if inputText == ""{
             let alert: UIAlertController = UIAlertController(title: "文字が入力されていません", message: "文字を入力してください",preferredStyle:  UIAlertControllerStyle.alert)
@@ -82,7 +96,7 @@ class AddViewController: UIViewController {
             
         }
         
-        label2.text = formatter.string(from: datePicker.date)
+        //label2.text = formatter.string(from: datePicker.date)
         
         try! realm.write {
             object.name = inputText
@@ -115,10 +129,22 @@ class AddViewController: UIViewController {
         try! realm.write() {
             realm.delete(object)
         }
-        
+        self.dismiss(animated: true, completion: nil)
+            }
+    
+    func tappedToolBarButton(sender: UIBarButtonItem) {
+        textField.resignFirstResponder()
     }
     
+    func changedDateEvent(sender: UIDatePicker){
+        var dateSelecter: UIDatePicker = sender
+        self.changeLabelDate(date: datePicker.date as NSDate)
+    }
     
+    func changeLabelDate(date:NSDate) {
+        textField2.text = formatter.string(from: datePicker.date)
+    }
+
     
     /*
      // MARK: - Navigation

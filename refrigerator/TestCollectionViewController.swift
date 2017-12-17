@@ -76,8 +76,6 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             imageViewArray = []
         }
         
-        
-        
         for i in 0 ..< stampArray.count {
             //画像作成
             let stamp = stampArray[i]
@@ -98,6 +96,11 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             imageView.tag = i + 1
             
             imageView.isUserInteractionEnabled = true
+            
+            //差を取る
+            
+           self.imageViewArray0].layer.borderColor = UIColor.red.cgColor
+           self.imageViewArray[].layer.borderWidth = 5
             
             self.view.addSubview(imageView)
             
