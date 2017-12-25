@@ -27,6 +27,8 @@ class AddViewController: UIViewController {
     
     var isDoneSave = false
     
+    var syokuzaiName: String!
+    
     let formatter = DateFormatter()
     
     let realm = try! Realm()
@@ -39,7 +41,7 @@ class AddViewController: UIViewController {
         print(realm.objects(Yasai.self))
         stampArray = realm.objects(Yasai.self).map{$0}
         object = stampArray[index]
-        textField.text = object.name
+        textField.text = syokuzaiName
         textView.text = object.memo
         textField2.text = object.date
         formatter.dateFormat = "yyyy/MM/dd"

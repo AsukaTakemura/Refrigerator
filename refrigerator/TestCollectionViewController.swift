@@ -35,13 +35,18 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     var imageArray: [String] = []
     var imageViewArray: [UIImageView] = []
     
+    var syokuzaiName: String!
+    
+    var nameArray: [String] = []
     
     var yasai2Array: [String] = ["ninjin2.png","tomato.png","corn.png","onion.png","daion.png","kyuuri.png","kyabetsu.png","nasu.png","piman.png","hourensou.png","kabotya.png"]
+    var yasainameArray: [String] = ["にんじん","トマト","とうもろこし","たまねぎ","大根","きゅうり","キャベツ","なす","ピーマン","ほうれん草","かぼちゃ"]
     
     var namamono2Array: [String] = ["tori.png","usi.png","buta.png","sake.png","kai.png","hituji.png"]
-    
+    var namamononameArray: [String] = ["鶏肉","牛肉","豚肉","魚","貝","羊肉"]
     
     var drink2Array: [String] = ["tea.png","milk.png","juice.png","drink.png"]
+    var drinknameArray: [String] = ["お茶","牛乳","ジュース","パックジュース"]
     
     let realm = try! Realm()
     
@@ -69,6 +74,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         self.view.bringSubview(toFront: collectionView)
         
         imageArray = yasai2Array
+        nameArray = yasainameArray
         
         //保存したスタンプの取り出し
         stampArray = realm.objects(Yasai.self).map{$0}
@@ -119,9 +125,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
                     imageView.layer.borderWidth = 3
                 }
             }
-            
-            
-            
+
             self.view.addSubview(imageView)
             
             //配列に加える
@@ -168,6 +172,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             return
         }
         print(selectedIndex)
+        syokuzaiName = nameArray[selectedIndex - 1]
         performSegue(withIdentifier: "tosetting", sender: nil)
     }
     
@@ -232,14 +237,17 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             print("野菜")
             
             imageArray = yasai2Array
+            nameArray = yasainameArray
         case 1:
             print("飲み物")
             
             imageArray = drink2Array
+            nameArray = drinknameArray
         case 2:
             print("生もの")
             
             imageArray = namamono2Array
+            nameArray = namamononameArray
         default:
             break
         }
@@ -285,9 +293,8 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let addViewController: AddViewController = segue.destination as! AddViewController
-        //        addViewController.tag = self.tag
         addViewController.index = self.selectedIndex
-        
+        addViewController.syokuzaiName = self.syokuzaiName
     }
     
 }
