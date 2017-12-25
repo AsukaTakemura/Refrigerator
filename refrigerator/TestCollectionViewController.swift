@@ -40,9 +40,13 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     var namamono2Array: [String] = ["tori.png","usi.png","buta.png","sake.png","kai.png","hituji.png"]
     
+    
     var drink2Array: [String] = ["tea.png","milk.png","juice.png","drink.png"]
     
     let realm = try! Realm()
+    
+    let dateFormatter = DateFormatter()
+//    dateFormatter.dateFomatter = "yyyy/MM/dd"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,8 +103,24 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             
             //差を取る
             
-           self.imageViewArray0].layer.borderColor = UIColor.red.cgColor
-           self.imageViewArray[].layer.borderWidth = 5
+            // self.imageViewArray[selectedIndex].layer.borderColor = UIColor.red.cgColor
+            // self.imageViewArray[selectedIndex].layer.borderWidth = 5
+            
+            let now = Date()
+            let calendar = Calendar(identifier: .gregorian)
+            
+            let dateString: String = stampArray[i].date
+            if dateString != "" {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy/MM/dd"
+                let date: Date = dateFormatter.date(from: dateString)!
+                if calendar.dateComponents([.day], from: now, to: date).day! <= 3{
+                    imageView.layer.borderColor = UIColor.red.cgColor
+                    imageView.layer.borderWidth = 3
+                }
+            }
+            
+            
             
             self.view.addSubview(imageView)
             
@@ -242,7 +262,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         try! realm.write {
             realm.delete(object)
         }
-    
+        
     }
     
     /* ドラッグした時のメソッド */
