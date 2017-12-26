@@ -21,7 +21,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet var deletionButton:UIButton!
     
-    
+    @IBOutlet var segmentedControl: UISegmentedControl!
     
     var imageIndex: Int = 0
     var judgeIndex: Int = 0
@@ -51,8 +51,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     let realm = try! Realm()
     
     let dateFormatter = DateFormatter()
-//    dateFormatter.dateFomatter = "yyyy/MM/dd"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,6 +64,12 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     override func viewWillAppear(_ animated: Bool) {
         setStamps()
+        
+        segmentedControl.selectedSegmentIndex = 0
+        imageArray = yasai2Array
+       
+        collectionView.reloadData()
+        
     }
     func setStamps() {
         
@@ -108,10 +113,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             imageView.isUserInteractionEnabled = true
             
             //差を取る
-            
-            // self.imageViewArray[selectedIndex].layer.borderColor = UIColor.red.cgColor
-            // self.imageViewArray[selectedIndex].layer.borderWidth = 5
-            
+
             let now = Date()
             let calendar = Calendar(identifier: .gregorian)
             
@@ -172,7 +174,27 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             return
         }
         print(selectedIndex)
-        syokuzaiName = nameArray[selectedIndex - 1]
+        // stampArrayのselectedIndex番目のimagenameを取得
+        let imagename = stampArray[selectedIndex].imagename
+        // 取得したimagenameがyasai2Arrayのなかで何番目になるか取得
+        if let index = yasai2Array.index(of: imagename) {
+           // nameArrayからその番号番目の要素を取得して、syokuzaiNameに代入
+            syokuzaiName = nameArray[index]
+        }
+        // 取得したimagenameがnamamono2Arrayのなかで何番目になるか取得
+        if let index2 = namamono2Array.index(of: imagename) {
+            // nameArrayからその番号番目の要素を取得して、syokuzaiNameに代入
+            syokuzaiName = nameArray[index2]
+        }
+        
+        // 取得したimagenameがdrink2Arrayyのなかで何番目になるか取得
+        if let index3 = drink2Array.index(of: imagename) {
+            // nameArrayからその番号番目の要素を取得して、syokuzaiNameに代入
+            syokuzaiName = nameArray[index3]
+        }
+        
+        
+        
         performSegue(withIdentifier: "tosetting", sender: nil)
     }
     
@@ -214,7 +236,8 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         try! realm.write {
             realm.add(yasai)
         }
-        
+        // stampArrayを取得
+        stampArray = realm.objects(Yasai.self).map{$0}
     }
     
     func push(){

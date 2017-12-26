@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Itb-e4-ldY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Itb-e4-ldY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -169,6 +169,7 @@
                         <outlet property="collectionView" destination="ubl-BZ-176" id="xzP-ss-WZ0"/>
                         <outlet property="deletionButton" destination="JXT-HL-yGv" id="DDM-2o-Xga"/>
                         <outlet property="image" destination="J1p-4C-Etw" id="tux-yC-aTH"/>
+                        <outlet property="segmentedControl" destination="el3-IF-c9O" id="BmL-gB-eOo"/>
                         <outlet property="stampView" destination="IgG-cJ-eQJ" id="ktW-PM-K4D"/>
                         <segue destination="Rd8-PB-lDI" kind="show" identifier="tosetting" id="gb5-RF-tyr"/>
                     </connections>
