@@ -171,7 +171,7 @@
                         <outlet property="image" destination="J1p-4C-Etw" id="tux-yC-aTH"/>
                         <outlet property="segmentedControl" destination="el3-IF-c9O" id="BmL-gB-eOo"/>
                         <outlet property="stampView" destination="IgG-cJ-eQJ" id="ktW-PM-K4D"/>
-                        <segue destination="Rd8-PB-lDI" kind="show" identifier="tosetting" id="gb5-RF-tyr"/>
+                        <segue destination="Rd8-PB-lDI" kind="presentation" identifier="tosetting" id="gb5-RF-tyr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

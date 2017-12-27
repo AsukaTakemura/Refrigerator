@@ -57,7 +57,8 @@ class AddViewController: UIViewController {
         toolBar.barStyle = .blackTranslucent
         toolBar.tintColor = UIColor.white
         toolBar.backgroundColor = UIColor.black
-        let toolBarButton = UIBarButtonItem(title: "完了", style: .bordered, target: self, action:#selector(tappedToolBarButton(sender:)))
+        let toolBarButton = UIBarButtonItem(title: "完了", style: .plain, target: self, action:#selector(tappedToolBarButton(sender:)))
+        
         datePicker.addTarget(self, action: #selector(changedDateEvent(sender:)), for: .valueChanged)
         toolBarButton.tag = 1
         toolBar.items = [toolBarButton]
@@ -124,7 +125,7 @@ class AddViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "uuid", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func lost(){
@@ -136,6 +137,8 @@ class AddViewController: UIViewController {
     
     func tappedToolBarButton(sender: UIBarButtonItem) {
         textField.resignFirstResponder()
+        textField2.resignFirstResponder()
+        
     }
     
     func changedDateEvent(sender: UIDatePicker){
