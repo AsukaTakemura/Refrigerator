@@ -35,6 +35,8 @@
 		1762CDB11E347CC20091BA93 /* corn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAD1E347CC20091BA93 /* corn.png */; };
 		1762CDB21E347CC20091BA93 /* onion.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAE1E347CC20091BA93 /* onion.png */; };
 		1762CDB31E347CC20091BA93 /* daion.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAF1E347CC20091BA93 /* daion.png */; };
+		1778FE44201D98A700272916 /* reizouko.png in Resources */ = {isa = PBXBuildFile; fileRef = 1778FE43201D98A600272916 /* reizouko.png */; };
+		1778FE46201DA5F000272916 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778FE45201DA5F000272916 /* UIColorHex.swift */; };
 		177D81211E220A6A00486943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81201E220A6A00486943 /* AppDelegate.swift */; };
 		177D81231E220A6A00486943 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81221E220A6A00486943 /* ViewController.swift */; };
 		177D81281E220A6A00486943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177D81271E220A6A00486943 /* Assets.xcassets */; };
@@ -95,6 +97,8 @@
 		1762CDAD1E347CC20091BA93 /* corn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corn.png; sourceTree = "<group>"; };
 		1762CDAE1E347CC20091BA93 /* onion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onion.png; sourceTree = "<group>"; };
 		1762CDAF1E347CC20091BA93 /* daion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daion.png; sourceTree = "<group>"; };
+		1778FE43201D98A600272916 /* reizouko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reizouko.png; path = ../../../Desktop/reizouko.png; sourceTree = "<group>"; };
+		1778FE45201DA5F000272916 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 		177D811D1E220A6A00486943 /* refrigerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = refrigerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		177D81201E220A6A00486943 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		177D81221E220A6A00486943 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 		172EBB721E8B4A81003CC7A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				1778FE43201D98A600272916 /* reizouko.png */,
 				177DCD961F56A54000F70B27 /* icon.png */,
 				1788EA421F356F2300EF8986 /* white.jpg */,
 				1716DEC41ED1761C0039B005 /* hituji.png */,
@@ -221,6 +226,7 @@
 				177D81291E220A6A00486943 /* LaunchScreen.storyboard */,
 				177D812C1E220A6A00486943 /* Info.plist */,
 				17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */,
+				1778FE45201DA5F000272916 /* UIColorHex.swift */,
 			);
 			path = refrigerator;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 				1762CDAB1E347BC90091BA93 /* ninjin2.png in Resources */,
 				1762CDB11E347CC20091BA93 /* corn.png in Resources */,
 				172EBB5C1E88EB09003CC7A1 /* nasu.png in Resources */,
+				1778FE44201D98A700272916 /* reizouko.png in Resources */,
 				172EBB6D1E8A467A003CC7A1 /* sake.png in Resources */,
 				1716DEC51ED1761C0039B005 /* hituji.png in Resources */,
 				1723BFE61E6BBCE7000AC2F3 /* j.jpg in Resources */,
@@ -578,6 +585,7 @@
 				17E36E5E1E88AADA002DB0B3 /* TestCollectionViewController.swift in Sources */,
 				171838DB1E470F2800A9A9FF /* AddViewController.swift in Sources */,
 				17E13D111F2450D100050F77 /* Yasai.swift in Sources */,
+				1778FE46201DA5F000272916 /* UIColorHex.swift in Sources */,
 				177D81231E220A6A00486943 /* ViewController.swift in Sources */,
 				177D81211E220A6A00486943 /* AppDelegate.swift in Sources */,
 			);

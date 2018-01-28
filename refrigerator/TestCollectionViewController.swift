@@ -21,6 +21,8 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet var deletionButton:UIButton!
     
+    @IBOutlet var modoruButton: UIButton!
+    
     @IBOutlet var segmentedControl: UISegmentedControl!
     
     var imageIndex: Int = 0
@@ -51,7 +53,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     let realm = try! Realm()
     
     let dateFormatter = DateFormatter()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,6 +61,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         
         backButton.layer.cornerRadius = 10
         deletionButton.layer.cornerRadius = 10
+        modoruButton.layer.cornerRadius = 10
         
     }
     
@@ -67,7 +70,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         
         segmentedControl.selectedSegmentIndex = 0
         imageArray = yasai2Array
-       
+        
         collectionView.reloadData()
         
     }
@@ -104,16 +107,20 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapSingle(gesture:)))
             imageView.addGestureRecognizer(singleTap)
             
-            /* パンジェスチャーをimageViewに追加 */
+            /* パンジェスチャー(ドラック)をimageViewに追加 */
             let panGesture = UIPanGestureRecognizer(target: self, action: #selector(dragImage(gesture:)))
             imageView.addGestureRecognizer(panGesture)
+            
+            //長押し
+            let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longtapdelete(gesture:)))
+            imageView.addGestureRecognizer(longPressGesture)
             
             imageView.tag = i + 1
             
             imageView.isUserInteractionEnabled = true
             
             //差を取る
-
+            
             let now = Date()
             let calendar = Calendar(identifier: .gregorian)
             
@@ -127,7 +134,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
                     imageView.layer.borderWidth = 3
                 }
             }
-
+            
             self.view.addSubview(imageView)
             
             //配列に加える
@@ -174,11 +181,11 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             return
         }
         print(selectedIndex)
-        // stampArrayのselectedIndex番目のimagenameを取得
+        // stampArrayのselectedIndex番目のimagenameを取得s
         let imagename = stampArray[selectedIndex].imagename
         // 取得したimagenameがyasai2Arrayのなかで何番目になるか取得
         if let index = yasai2Array.index(of: imagename) {
-           // nameArrayからその番号番目の要素を取得して、syokuzaiNameに代入
+            // nameArrayからその番号番目の要素を取得して、syokuzaiNameに代入
             syokuzaiName = nameArray[index]
         }
         // 取得したimagenameがnamamono2Arrayのなかで何番目になるか取得
@@ -306,6 +313,26 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
             yasai.coordinatex = Float(gesture.view!.frame.origin.x)
             yasai.coordinatey = Float(gesture.view!.frame.origin.y)
         }
+    }
+    
+    func longtapdelete(gesture: UILongPressGestureRecognizer){
+        gesture.view?.tag
+        
+        let actionSheet = UIAlertController(title: "消去しますか？", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        let yes = UIAlertAction(title: "はい", style: UIAlertActionStyle.default, handler: {
+            (action: UIAlertAction!) in
+            try! self.realm.write() {
+                self.realm.delete(self.object)
+            }
+            gesture.view?.removeFromSuperview()
+        })
+        let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.default, handler: nil)
+        
+        actionSheet.addAction(yes)
+        actionSheet.addAction(cancel)
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     func modoru() {

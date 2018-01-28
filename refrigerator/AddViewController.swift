@@ -16,6 +16,9 @@ class AddViewController: UIViewController {
     @IBOutlet var textField2: UITextField! //date
     var datePicker = UIDatePicker()
     @IBOutlet var textView: UITextView!
+    @IBOutlet var backButton: UIButton!
+    @IBOutlet var lostButton: UIButton!
+    @IBOutlet var decisionButton: UIButton!
     
     //    var tag: Int!
     var index = 0
@@ -46,8 +49,9 @@ class AddViewController: UIViewController {
         textField2.text = object.date
         formatter.dateFormat = "yyyy/MM/dd"
         let date = formatter.date(from: object.date)
-        self.textView.layer.borderColor = UIColor(red: 152/255, green: 204/255, blue: 154/255, alpha: 1).cgColor
-        self.textView.layer.borderWidth = 3
+        self.textView.layer.borderColor = UIColor(hex: "5EC43B").cgColor
+        self.textView.layer.borderWidth = 1
+        textView.layer.cornerRadius = 10
         
         datePicker.datePickerMode = UIDatePickerMode.date
         textField2.inputView = datePicker
@@ -63,6 +67,18 @@ class AddViewController: UIViewController {
         toolBarButton.tag = 1
         toolBar.items = [toolBarButton]
         textField2.inputAccessoryView = toolBar
+        
+        lostButton.layer.cornerRadius = 10
+        backButton.layer.cornerRadius = 10
+        decisionButton.layer.cornerRadius = 10
+        
+        textField.layer.cornerRadius = 10
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor(hex: "5EC43B").cgColor
+        textField2.layer.cornerRadius = 10
+        textField2.layer.borderWidth = 1
+        textField2.layer.borderColor = UIColor(hex: "5EC43B").cgColor
+        
         // datePicker.date = date!
         // Do any additional setup after loading the view.
     }
@@ -133,7 +149,7 @@ class AddViewController: UIViewController {
             realm.delete(object)
         }
         self.dismiss(animated: true, completion: nil)
-            }
+    }
     
     func tappedToolBarButton(sender: UIBarButtonItem) {
         textField.resignFirstResponder()
@@ -149,7 +165,7 @@ class AddViewController: UIViewController {
     func changeLabelDate(date:NSDate) {
         textField2.text = formatter.string(from: datePicker.date)
     }
-
+    
     
     /*
      // MARK: - Navigation

@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var openButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,7 +20,11 @@ class ViewController: UIViewController {
         let statusBar = UIView(frame:CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 20.0))
         statusBar.backgroundColor = UIColor(red: 0.286, green: 0.208, blue: 0.208, alpha: 1.0)
         
+        openButton.layer.cornerRadius = 10
+        openButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        
         view.addSubview(statusBar)
+        
     }
     
    /* override func preferredStatusBarStyle() -> UIStatusBarStyle {
