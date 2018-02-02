@@ -46,7 +46,7 @@
 		177DCD971F56A54000F70B27 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 177DCD961F56A54000F70B27 /* icon.png */; };
 		1788EA431F356F2300EF8986 /* white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1788EA421F356F2300EF8986 /* white.jpg */; };
 		17E13D111F2450D100050F77 /* Yasai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E13D101F2450D100050F77 /* Yasai.swift */; };
-		17E36E5E1E88AADA002DB0B3 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */; };
+		17E36E5E1E88AADA002DB0B3 /* RefrigeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E36E5D1E88AADA002DB0B3 /* RefrigeViewController.swift */; };
 		E9E4B0E3C311566D64EB2D99 /* Pods_refrigeratorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5B1EC6444D8B2DCAE5BE93 /* Pods_refrigeratorUITests.framework */; };
 		F143E77C9F5F941DD87C51F0 /* Pods_refrigeratorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED451F97F4A67735EC187A46 /* Pods_refrigeratorTests.framework */; };
 		F5AAE449615A540FFA5A429F /* Pods_refrigerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEFD1A906393B9CCFD45058 /* Pods_refrigerator.framework */; };
@@ -115,7 +115,7 @@
 		177DCD981F76D31F00F70B27 /* Mini.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mini.otf; sourceTree = "<group>"; };
 		1788EA421F356F2300EF8986 /* white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white.jpg; sourceTree = "<group>"; };
 		17E13D101F2450D100050F77 /* Yasai.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yasai.swift; sourceTree = "<group>"; };
-		17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
+		17E36E5D1E88AADA002DB0B3 /* RefrigeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefrigeViewController.swift; sourceTree = "<group>"; };
 		18D824E4008553526B42A729 /* Pods-refrigeratorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refrigeratorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-refrigeratorTests/Pods-refrigeratorTests.release.xcconfig"; sourceTree = "<group>"; };
 		49EBF47AD31FC3A067960617 /* Pods-refrigerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refrigerator.release.xcconfig"; path = "Pods/Target Support Files/Pods-refrigerator/Pods-refrigerator.release.xcconfig"; sourceTree = "<group>"; };
 		5EEFD1A906393B9CCFD45058 /* Pods_refrigerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_refrigerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,7 +225,7 @@
 				177D81271E220A6A00486943 /* Assets.xcassets */,
 				177D81291E220A6A00486943 /* LaunchScreen.storyboard */,
 				177D812C1E220A6A00486943 /* Info.plist */,
-				17E36E5D1E88AADA002DB0B3 /* TestCollectionViewController.swift */,
+				17E36E5D1E88AADA002DB0B3 /* RefrigeViewController.swift */,
 				1778FE45201DA5F000272916 /* UIColorHex.swift */,
 			);
 			path = refrigerator;
@@ -582,7 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17E36E5E1E88AADA002DB0B3 /* TestCollectionViewController.swift in Sources */,
+				17E36E5E1E88AADA002DB0B3 /* RefrigeViewController.swift in Sources */,
 				171838DB1E470F2800A9A9FF /* AddViewController.swift in Sources */,
 				17E13D111F2450D100050F77 /* Yasai.swift in Sources */,
 				1778FE46201DA5F000272916 /* UIColorHex.swift in Sources */,

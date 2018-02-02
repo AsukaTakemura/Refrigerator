@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="-138.40000000000001" y="65.217391304347828"/>
         </scene>
-        <!--Test Collection View Controller-->
+        <!--Refrige View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TestCollectionViewController" customModule="refrigerator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RefrigeViewController" customModule="refrigerator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -162,13 +162,12 @@
                         <color key="backgroundColor" red="0.36862745099999999" green="0.70980392160000005" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="Xue-rA-61d" id="lS7-5v-f9Y"/>
-                        <outlet property="collectionView" destination="ubl-BZ-176" id="xzP-ss-WZ0"/>
-                        <outlet property="deletionButton" destination="JXT-HL-yGv" id="DDM-2o-Xga"/>
+                        <outlet property="addDeleteButton" destination="JXT-HL-yGv" id="xuG-oN-ifW"/>
+                        <outlet property="backButton" destination="Xue-rA-61d" id="oGg-LB-wab"/>
                         <outlet property="image" destination="J1p-4C-Etw" id="tux-yC-aTH"/>
-                        <outlet property="modoruButton" destination="jbu-SY-oHl" id="ZnD-BC-cN1"/>
                         <outlet property="segmentedControl" destination="el3-IF-c9O" id="BmL-gB-eOo"/>
                         <outlet property="stampView" destination="IgG-cJ-eQJ" id="ktW-PM-K4D"/>
+                        <outlet property="undoButton" destination="jbu-SY-oHl" id="kJN-vX-9cE"/>
                         <segue destination="Rd8-PB-lDI" kind="presentation" identifier="tosetting" id="gb5-RF-tyr"/>
                     </connections>
                 </viewController>

@@ -20,40 +20,28 @@ class AddViewController: UIViewController {
     @IBOutlet var lostButton: UIButton!
     @IBOutlet var decisionButton: UIButton!
     
-    //    var tag: Int!
-    var index = 0
-    var dictionaryArray: [String:String]!
-    var dicArray:[AnyObject] = []
-    var nameArray: [String] = []
-    var limitArray: [String] = []
-    var stampArray: [Yasai] = []
-    
     var isDoneSave = false
-    
-    var syokuzaiName: String!
     
     let formatter = DateFormatter()
     
     let realm = try! Realm()
     
-    var objectIndex: Int! // 前のtableviewで選ばれたcellのindexPath.row(realmにある配列の添字)
-    var object: Yasai = Yasai()
+    var yasai: Yasai!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(realm.objects(Yasai.self))
-        stampArray = realm.objects(Yasai.self).map{$0}
-        object = stampArray[index]
-        textField.text = syokuzaiName
-        textView.text = object.memo
-        textField2.text = object.date
-        formatter.dateFormat = "yyyy/MM/dd"
-        let date = formatter.date(from: object.date)
+        textField.text = yasai.name
+        textView.text = yasai.memo
+        textField2.text = yasai.date
+        
         self.textView.layer.borderColor = UIColor(hex: "5EC43B").cgColor
         self.textView.layer.borderWidth = 1
         textView.layer.cornerRadius = 10
         
         datePicker.datePickerMode = UIDatePickerMode.date
+        formatter.dateFormat = "yyyy/MM/dd"
+        let date = formatter.date(from: yasai.date)
+        datePicker.date = date ?? Date()
         textField2.inputView = datePicker
         
         let toolBar = UIToolbar(frame:  CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
@@ -118,9 +106,9 @@ class AddViewController: UIViewController {
         //label2.text = formatter.string(from: datePicker.date)
         
         try! realm.write {
-            object.name = inputText
-            object.date = formatter.string(from: datePicker.date)
-            object.memo = memoText
+            yasai.name = inputText
+            yasai.date = formatter.string(from: datePicker.date)
+            yasai.memo = memoText
             
         }
         
@@ -146,7 +134,7 @@ class AddViewController: UIViewController {
     
     @IBAction func lost(){
         try! realm.write() {
-            realm.delete(object)
+            realm.delete(yasai)
         }
         self.dismiss(animated: true, completion: nil)
     }

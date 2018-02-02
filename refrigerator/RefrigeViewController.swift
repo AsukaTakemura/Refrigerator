@@ -9,37 +9,27 @@
 import UIKit
 import RealmSwift
 
-class TestCollectionViewController: UIViewController, UICollectionViewDataSource ,UICollectionViewDelegate{
+class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICollectionViewDelegate{
     
     @IBOutlet var collectionView: UICollectionView!
-    
-    @IBOutlet var stampView: UIView!
-    
-    @IBOutlet var image:UIImageView!
-    
-    @IBOutlet var backButton:UIButton!
-    
-    @IBOutlet var deletionButton:UIButton!
-    
-    @IBOutlet var modoruButton: UIButton!
-    
+    @IBOutlet var refrigeView: UIView!
+    @IBOutlet var undoButton:UIButton!
+    @IBOutlet var addDeleteButton:UIButton!
+    @IBOutlet var backButton: UIButton!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
-    var imageIndex: Int = 0
-    var judgeIndex: Int = 0
-    
-    var object: Yasai = Yasai()
     
     var tag: Int = 0
-    var selectedIndex : Int = 0
-    var stampArray: [Yasai] = []
+    var selectedStamp : Yasai?
+    var selectedStampIndex: Int = 0
+    var selectedStampImageIndex: Int = 0
+    var stampArray:[Yasai] = []
     
-    var imageArray: [String] = []
+    var stampArray: [Yasai] = []
     var imageViewArray: [UIImageView] = []
     
-    var syokuzaiName: String!
-    
-    var nameArray: [String] = []
+    var imageNameArray: [String] = []
+    var stampNameArray: [String] = []
     
     var yasai2Array: [String] = ["ninjin2.png","tomato.png","corn.png","onion.png","daion.png","kyuuri.png","kyabetsu.png","nasu.png","piman.png","hourensou.png","kabotya.png"]
     var yasainameArray: [String] = ["にんじん","トマト","とうもろこし","たまねぎ","大根","きゅうり","キャベツ","なす","ピーマン","ほうれん草","かぼちゃ"]
@@ -52,43 +42,41 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     let realm = try! Realm()
     
-    let dateFormatter = DateFormatter()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
+        undoButton.layer.cornerRadius = 10
+        addDeleteButton.layer.cornerRadius = 10
         backButton.layer.cornerRadius = 10
-        deletionButton.layer.cornerRadius = 10
-        modoruButton.layer.cornerRadius = 10
         
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(addImageView(gesture:)))
+        self.refrigeView.addGestureRecognizer(singleTap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setStamps()
         
         segmentedControl.selectedSegmentIndex = 0
-        imageArray = yasai2Array
+        imageNameArray = yasai2Array
+        stampNameArray = yasainameArray
         
         collectionView.reloadData()
-        
     }
+    
+    
     func setStamps() {
-        
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(addImageView(gesture:)))
-        self.stampView.addGestureRecognizer(singleTap)
         
         self.view.bringSubview(toFront: collectionView)
         
-        imageArray = yasai2Array
-        nameArray = yasainameArray
+        imageNameArray = yasai2Array
+        stampNameArray = yasainameArray
         
         //保存したスタンプの取り出し
         stampArray = realm.objects(Yasai.self).map{$0}
-        print(stampArray)
         
-        //表示
+        //表示(消去)
         for imageView in imageViewArray{
             imageView.removeFromSuperview()
             imageViewArray = []
@@ -151,7 +139,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         
         let imageview = UIImageView()
         
-        imageview.image = UIImage(named: imageArray[indexPath.row])
+        imageview.image = UIImage(named: imageNameArray[indexPath.row])
         
         cell.backgroundView = imageview
         
@@ -162,53 +150,33 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         
-        imageIndex = indexPath.row
+        selectStampImageIndex = indexPath.row
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        return imageNameArray.count
     }
     
     func tapSingle(gesture: UITapGestureRecognizer) {
         //tagの受け渡し
         // tag = gesture.view!.tag
         if let tag = gesture.view?.tag {
-            selectedIndex = tag - 1
-            print(selectedIndex)
+            selectedStampIndex = tag - 1
         } else {
             print("no tag")
             return
         }
-        print(selectedIndex)
-        // stampArrayのselectedIndex番目のimagenameを取得s
-        let imagename = stampArray[selectedIndex].imagename
-        // 取得したimagenameがyasai2Arrayのなかで何番目になるか取得
-        if let index = yasai2Array.index(of: imagename) {
-            // nameArrayからその番号番目の要素を取得して、syokuzaiNameに代入
-            syokuzaiName = nameArray[index]
-        }
-        // 取得したimagenameがnamamono2Arrayのなかで何番目になるか取得
-        if let index2 = namamono2Array.index(of: imagename) {
-            // nameArrayからその番号番目の要素を取得して、syokuzaiNameに代入
-            syokuzaiName = nameArray[index2]
-        }
-        
-        // 取得したimagenameがdrink2Arrayyのなかで何番目になるか取得
-        if let index3 = drink2Array.index(of: imagename) {
-            // nameArrayからその番号番目の要素を取得して、syokuzaiNameに代入
-            syokuzaiName = nameArray[index3]
-        }
-        
-        
+        selectedStamp = stampArray[selectedStampIndex]
         
         performSegue(withIdentifier: "tosetting", sender: nil)
+        
     }
     
     
     func addImageView(gesture: UIGestureRecognizer) {
         //画像作成
-        let imageName = imageArray[imageIndex]
+        let imageName = imageNameArray[selectStampImageIndex]
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         imageView.image = UIImage(named: imageName)
         imageView.center = gesture.location(in: self.view)
@@ -266,18 +234,19 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         case 0:
             print("野菜")
             
-            imageArray = yasai2Array
-            nameArray = yasainameArray
+            imageNameArray = yasai2Array
+            stampArray = yasainameArray
         case 1:
             print("飲み物")
             
-            imageArray = drink2Array
-            nameArray = drinknameArray
+            imageNameArray = drink2Array
+            stampArray = drinknameArray
         case 2:
             print("生もの")
             
-            imageArray = namamono2Array
-            nameArray = namamononameArray
+            imageNameArray = namamono2Array
+            stampArray = namamononameArray
+            
         default:
             break
         }
@@ -286,7 +255,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     }
     
     
-    func back(){
+    @IBAction func undo(){
         if imageViewArray.count != 0 {
             imageViewArray.last?.removeFromSuperview()
             imageViewArray.removeLast()
@@ -306,13 +275,22 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     /* ドラッグした時のメソッド */
     /* 内容はgesuture.viewの中心座標をgesture.locationの位置にする */
     func dragImage(gesture: UIGestureRecognizer) {
+        if let tag = gesture.view?.tag {
+            selectedStampIndex = tag - 1
+        } else {
+            print("no tag")
+            return
+        }
+        
+        selectedStamp = stampArray[selectedStampIndex]
+        
         gesture.view?.center = gesture.location(in: self.view)
-        let yasai: Yasai = stampArray[gesture.view!.tag-1]
         
         try! realm.write {
-            yasai.coordinatex = Float(gesture.view!.frame.origin.x)
-            yasai.coordinatey = Float(gesture.view!.frame.origin.y)
+            selectedStamp!.coordinatex = Float(gesture.view!.frame.origin.x)
+            selectedStamp!.coordinatey = Float(gesture.view!.frame.origin.y)
         }
+        
     }
     
     func longtapdelete(gesture: UILongPressGestureRecognizer){
@@ -323,7 +301,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         let yes = UIAlertAction(title: "はい", style: UIAlertActionStyle.default, handler: {
             (action: UIAlertAction!) in
             try! self.realm.write() {
-                self.realm.delete(self.object)
+                self.realm.delete(self.selectedStamp!)
             }
             gesture.view?.removeFromSuperview()
         })
@@ -335,7 +313,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    func modoru() {
+   @IBAction func back() {
         self.dismiss(animated: true, completion: nil)
         
     }
@@ -343,8 +321,7 @@ class TestCollectionViewController: UIViewController, UICollectionViewDataSource
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let addViewController: AddViewController = segue.destination as! AddViewController
-        addViewController.index = self.selectedIndex
-        addViewController.syokuzaiName = self.syokuzaiName
+        addViewController.yasai = selectedStamp!
     }
     
 }
