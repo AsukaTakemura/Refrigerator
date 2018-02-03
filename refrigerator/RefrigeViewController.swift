@@ -172,7 +172,6 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
     
     func addImageView(gesture: UIGestureRecognizer) {
         
-        print("add image ----------")
         //画像作成
         let imageName = imageNameArray[selectedStampImageIndex]
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -219,9 +218,8 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
         }
         imageViewArray.removeAll()
         
-        let yasaiList = realm.objects(Yasai.self)
         try! realm.write {
-            realm.delete(yasaiList)
+            realm.delete(stampArray)
         }
         setStamps()
     }
@@ -291,12 +289,19 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
     }
     
     func longtapdelete(gesture: UILongPressGestureRecognizer){
-        gesture.view?.tag
         
         let actionSheet = UIAlertController(title: "消去しますか？", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
         
         let yes = UIAlertAction(title: "はい", style: UIAlertActionStyle.default, handler: {
             (action: UIAlertAction!) in
+            
+            if let tag = gesture.view?.tag {
+                self.selectedStampIndex = tag - 1
+            }else{
+                print("no tag")
+                return
+            }
+            self.selectedStamp = self.stampArray[self.selectedStampIndex]
             try! self.realm.write() {
                 self.realm.delete(self.selectedStamp!)
             }

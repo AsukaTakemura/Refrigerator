@@ -46,7 +46,7 @@ class AddViewController: UIViewController {
         
         let toolBar = UIToolbar(frame:  CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
         toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
-        toolBar.barStyle = .blackTranslucent
+        toolBar.barTintColor = UIColor(red: 94/255, green: 181/255, blue: 82/255, alpha: 1)
         toolBar.tintColor = UIColor.white
         toolBar.backgroundColor = UIColor.black
         let toolBarButton = UIBarButtonItem(title: "完了", style: .plain, target: self, action:#selector(tappedToolBarButton(sender:)))

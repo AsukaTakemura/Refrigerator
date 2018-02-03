@@ -162,7 +162,7 @@
                         <outlet property="addDeleteButton" destination="JXT-HL-yGv" id="xuG-oN-ifW"/>
                         <outlet property="backButton" destination="Xue-rA-61d" id="oGg-LB-wab"/>
                         <outlet property="collectionView" destination="ubl-BZ-176" id="21o-7Y-Zry"/>
-                        <outlet property="refrigeView" destination="J1p-4C-Etw" id="Ql6-Xa-hB6"/>
+                        <outlet property="refrigeView" destination="IgG-cJ-eQJ" id="EzL-lW-mRP"/>
                         <outlet property="segmentedControl" destination="el3-IF-c9O" id="eGe-zz-fIM"/>
                         <outlet property="undoButton" destination="jbu-SY-oHl" id="kJN-vX-9cE"/>
                         <segue destination="Rd8-PB-lDI" kind="presentation" identifier="tosetting" id="gb5-RF-tyr"/>
