@@ -155,6 +155,14 @@
                                     <action selector="deleteAll" destination="BYZ-38-t0r" eventType="touchUpInside" id="XzV-7G-zVe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Owk-8b-oAv">
+                                <rect key="frame" x="319" y="28" width="40" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hatena.png"/>
+                                <connections>
+                                    <action selector="hatena" destination="BYZ-38-t0r" eventType="touchUpInside" id="MqC-4p-Uf7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.36862745099999999" green="0.70980392160000005" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -162,6 +170,7 @@
                         <outlet property="addDeleteButton" destination="JXT-HL-yGv" id="xuG-oN-ifW"/>
                         <outlet property="backButton" destination="Xue-rA-61d" id="oGg-LB-wab"/>
                         <outlet property="collectionView" destination="ubl-BZ-176" id="21o-7Y-Zry"/>
+                        <outlet property="hatenaButton" destination="Owk-8b-oAv" id="CaA-at-1yH"/>
                         <outlet property="refrigeView" destination="IgG-cJ-eQJ" id="EzL-lW-mRP"/>
                         <outlet property="segmentedControl" destination="el3-IF-c9O" id="eGe-zz-fIM"/>
                         <outlet property="undoButton" destination="jbu-SY-oHl" id="kJN-vX-9cE"/>
@@ -171,6 +180,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="952.79999999999995" y="64.31784107946028"/>
+        </scene>
+        <!--Hatena View Controller-->
+        <scene sceneID="TLM-id-VP8">
+            <objects>
+                <viewController storyboardIdentifier="next" id="XXS-gf-v4v" customClass="HatenaViewController" customModule="refrigerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4PY-cR-is0"/>
+                        <viewControllerLayoutGuide type="bottom" id="hWk-Ab-LkG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nTK-4S-bJ5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kaitou.png" translatesAutoresizingMaskIntoConstraints="NO" id="x1c-S7-Gng">
+                                <rect key="frame" x="26" y="54" width="322" height="593"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRP-5e-yaM">
+                                <rect key="frame" x="298" y="11" width="61" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="✖️"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mV-fS-EgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2021.5999999999999" y="-731.78410794602701"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="Lk0-5E-11q">
@@ -284,6 +323,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hatena.png" width="256" height="256"/>
+        <image name="kaitou.png" width="321" height="608"/>
         <image name="reizouko.gif" width="595" height="619"/>
         <image name="reizouko.png" width="525" height="497"/>
         <image name="white.jpg" width="480" height="640"/>

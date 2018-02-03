@@ -30,6 +30,9 @@
 		172EBB701E8A467A003CC7A1 /* tori.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB671E8A467A003CC7A1 /* tori.png */; };
 		172EBB711E8A467A003CC7A1 /* tea.png in Resources */ = {isa = PBXBuildFile; fileRef = 172EBB681E8A467A003CC7A1 /* tea.png */; };
 		175C2C0F202554BA00457075 /* reizouko.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C2C0E202554B900457075 /* reizouko.png */; };
+		175C2C112025876100457075 /* hatena.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C2C102025875F00457075 /* hatena.png */; };
+		175C2C132025A24E00457075 /* HatenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C2C122025A24E00457075 /* HatenaViewController.swift */; };
+		175C2C152025B02F00457075 /* kaitou.png in Resources */ = {isa = PBXBuildFile; fileRef = 175C2C142025B02F00457075 /* kaitou.png */; };
 		1762CDAB1E347BC90091BA93 /* ninjin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAA1E347BC90091BA93 /* ninjin2.png */; };
 		1762CDB01E347CC20091BA93 /* tomato.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAC1E347CC20091BA93 /* tomato.png */; };
 		1762CDB11E347CC20091BA93 /* corn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAD1E347CC20091BA93 /* corn.png */; };
@@ -91,6 +94,9 @@
 		172EBB671E8A467A003CC7A1 /* tori.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tori.png; sourceTree = "<group>"; };
 		172EBB681E8A467A003CC7A1 /* tea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tea.png; sourceTree = "<group>"; };
 		175C2C0E202554B900457075 /* reizouko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reizouko.png; path = ../../reizouko.png; sourceTree = "<group>"; };
+		175C2C102025875F00457075 /* hatena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hatena.png; sourceTree = "<group>"; };
+		175C2C122025A24E00457075 /* HatenaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatenaViewController.swift; sourceTree = "<group>"; };
+		175C2C142025B02F00457075 /* kaitou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaitou.png; sourceTree = "<group>"; };
 		1762CDAA1E347BC90091BA93 /* ninjin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ninjin2.png; sourceTree = "<group>"; };
 		1762CDAC1E347CC20091BA93 /* tomato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tomato.png; sourceTree = "<group>"; };
 		1762CDAD1E347CC20091BA93 /* corn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corn.png; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 				1716DEC41ED1761C0039B005 /* hituji.png */,
 				1762CDAA1E347BC90091BA93 /* ninjin2.png */,
 				1762CDAC1E347CC20091BA93 /* tomato.png */,
+				175C2C142025B02F00457075 /* kaitou.png */,
 				1762CDAD1E347CC20091BA93 /* corn.png */,
 				175C2C0E202554B900457075 /* reizouko.png */,
 				1723BFE51E6BBCE7000AC2F3 /* j.jpg */,
@@ -169,6 +176,7 @@
 				1762CDAF1E347CC20091BA93 /* daion.png */,
 				172EBB521E88EB08003CC7A1 /* kyuuri.png */,
 				172EBB531E88EB09003CC7A1 /* hourensou.png */,
+				175C2C102025875F00457075 /* hatena.png */,
 				172EBB541E88EB09003CC7A1 /* piman.png */,
 				172EBB601E8A467A003CC7A1 /* milk.png */,
 				172EBB611E8A467A003CC7A1 /* juice.png */,
@@ -218,6 +226,7 @@
 				17E13D101F2450D100050F77 /* Yasai.swift */,
 				177D81221E220A6A00486943 /* ViewController.swift */,
 				171838DC1E47127000A9A9FF /* Main.storyboard */,
+				175C2C122025A24E00457075 /* HatenaViewController.swift */,
 				171838DA1E470F2800A9A9FF /* AddViewController.swift */,
 				177D81271E220A6A00486943 /* Assets.xcassets */,
 				177D81291E220A6A00486943 /* LaunchScreen.storyboard */,
@@ -396,9 +405,11 @@
 				172EBB591E88EB09003CC7A1 /* hourensou.png in Resources */,
 				171838DE1E47127000A9A9FF /* Main.storyboard in Resources */,
 				172EBB5F1E8A3C9F003CC7A1 /* reizouko.gif in Resources */,
+				175C2C152025B02F00457075 /* kaitou.png in Resources */,
 				172EBB6C1E8A467A003CC7A1 /* sashimi.png in Resources */,
 				177D81281E220A6A00486943 /* Assets.xcassets in Resources */,
 				172EBB5D1E88EB09003CC7A1 /* kyabetsu.png in Resources */,
+				175C2C112025876100457075 /* hatena.png in Resources */,
 				172EBB6A1E8A467A003CC7A1 /* juice.png in Resources */,
 				172EBB5B1E88EB09003CC7A1 /* kabotya.png in Resources */,
 				172EBB5A1E88EB09003CC7A1 /* piman.png in Resources */,
@@ -581,6 +592,7 @@
 				17E36E5E1E88AADA002DB0B3 /* RefrigeViewController.swift in Sources */,
 				171838DB1E470F2800A9A9FF /* AddViewController.swift in Sources */,
 				17E13D111F2450D100050F77 /* Yasai.swift in Sources */,
+				175C2C132025A24E00457075 /* HatenaViewController.swift in Sources */,
 				1778FE46201DA5F000272916 /* UIColorHex.swift in Sources */,
 				177D81231E220A6A00486943 /* ViewController.swift in Sources */,
 				177D81211E220A6A00486943 /* AppDelegate.swift in Sources */,

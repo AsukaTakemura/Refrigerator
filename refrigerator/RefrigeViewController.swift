@@ -16,6 +16,7 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
     @IBOutlet var undoButton:UIButton!
     @IBOutlet var addDeleteButton:UIButton!
     @IBOutlet var backButton: UIButton!
+    @IBOutlet var hatenaButton: UIButton!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
     
@@ -51,6 +52,10 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
         
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(addImageView(gesture:)))
         self.refrigeView.addGestureRecognizer(singleTap)
+        
+        hatenaButton.setImage(UIImage(named: "hatena")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        hatenaButton.tintColor = UIColor.white
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,6 +121,7 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
                 if calendar.dateComponents([.day], from: now, to: date).day! <= 3{
                     imageView.layer.borderColor = UIColor.red.cgColor
                     imageView.layer.borderWidth = 3
+                    imageView.layer.cornerRadius = 15
                 }
             }
             
@@ -315,9 +321,15 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-   @IBAction func back() {
+    @IBAction func back() {
         self.dismiss(animated: true, completion: nil)
         
+    }
+    
+    @IBAction func hatena(){
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "next") as! HatenaViewController
+        self.present(nextView, animated: true, completion: nil)
     }
     
     
