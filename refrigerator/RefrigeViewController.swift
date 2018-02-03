@@ -24,8 +24,6 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
     var selectedStampIndex: Int = 0
     var selectedStampImageIndex: Int = 0
     var stampArray:[Yasai] = []
-    
-    var stampArray: [Yasai] = []
     var imageViewArray: [UIImageView] = []
     
     var imageNameArray: [String] = []
@@ -70,9 +68,6 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
         
         self.view.bringSubview(toFront: collectionView)
         
-        imageNameArray = yasai2Array
-        stampNameArray = yasainameArray
-        
         //保存したスタンプの取り出し
         stampArray = realm.objects(Yasai.self).map{$0}
         
@@ -81,7 +76,8 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
             imageView.removeFromSuperview()
             imageViewArray = []
         }
-        
+        print("stamp array in set stamps")
+        print(stampArray)
         for i in 0 ..< stampArray.count {
             //画像作成
             let stamp = stampArray[i]
@@ -150,7 +146,7 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         
-        selectStampImageIndex = indexPath.row
+        selectedStampImageIndex = indexPath.row
         
     }
     
@@ -175,11 +171,13 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
     
     
     func addImageView(gesture: UIGestureRecognizer) {
+        
+        print("add image ----------")
         //画像作成
-        let imageName = imageNameArray[selectStampImageIndex]
+        let imageName = imageNameArray[selectedStampImageIndex]
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         imageView.image = UIImage(named: imageName)
-        imageView.center = gesture.location(in: self.view)
+        imageView.center = gesture.location(in: gesture.view)
         
         //ジェスチャーを加える
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapSingle(gesture:)))
@@ -193,7 +191,7 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
         
         imageView.isUserInteractionEnabled = true
         
-        self.view.addSubview(imageView)
+        self.refrigeView.addSubview(imageView)
         
         //配列に加える
         imageViewArray.append(imageView)
@@ -204,18 +202,17 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
         yasai.coordinatex = Float(imageView.frame.origin.x)
         yasai.coordinatey = Float(imageView.frame.origin.y)
         yasai.date = String()
-        yasai.name = "名前"
+        yasai.name = stampNameArray[selectedStampImageIndex]
         
         let realm = try! Realm()
         
         try! realm.write {
             realm.add(yasai)
         }
-        // stampArrayを取得
-        stampArray = realm.objects(Yasai.self).map{$0}
+        stampArray.append(yasai)
     }
     
-    func push(){
+    @IBAction func deleteAll(){
         //画面にある画像全削除
         for imageView in imageViewArray{
             imageView.removeFromSuperview()
@@ -235,17 +232,17 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
             print("野菜")
             
             imageNameArray = yasai2Array
-            stampArray = yasainameArray
+            stampNameArray = yasainameArray
         case 1:
             print("飲み物")
             
             imageNameArray = drink2Array
-            stampArray = drinknameArray
+            stampNameArray = drinknameArray
         case 2:
             print("生もの")
             
             imageNameArray = namamono2Array
-            stampArray = namamononameArray
+            stampNameArray = namamononameArray
             
         default:
             break

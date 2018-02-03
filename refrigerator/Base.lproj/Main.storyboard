@@ -107,7 +107,7 @@
                                     <color key="titleColor" red="0.36992079020000002" green="0.76978379490000004" blue="0.2307978272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="back" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Qc-aO-B5f"/>
+                                    <action selector="undo" destination="BYZ-38-t0r" eventType="touchUpInside" id="MP0-X8-LIZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbu-SY-oHl">
@@ -119,7 +119,7 @@
                                     <color key="titleColor" red="0.36992079019546509" green="0.76978379487991333" blue="0.23079782724380493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="modoru" destination="BYZ-38-t0r" eventType="touchUpInside" id="9u4-x4-Vrc"/>
+                                    <action selector="back" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cuo-l9-z1E"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="el3-IF-c9O">
@@ -131,9 +131,6 @@
                                     <segment title="肉・魚"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="segmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cz0-uz-8aZ"/>
-                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IgG-cJ-eQJ">
                                 <rect key="frame" x="0.0" y="77" width="375" height="418"/>
@@ -155,7 +152,7 @@
                                     <color key="titleColor" red="0.36992079020000002" green="0.76978379490000004" blue="0.2307978272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="push" destination="BYZ-38-t0r" eventType="touchUpInside" id="5nZ-PI-NEZ"/>
+                                    <action selector="deleteAll" destination="BYZ-38-t0r" eventType="touchUpInside" id="XzV-7G-zVe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -164,9 +161,9 @@
                     <connections>
                         <outlet property="addDeleteButton" destination="JXT-HL-yGv" id="xuG-oN-ifW"/>
                         <outlet property="backButton" destination="Xue-rA-61d" id="oGg-LB-wab"/>
-                        <outlet property="image" destination="J1p-4C-Etw" id="tux-yC-aTH"/>
-                        <outlet property="segmentedControl" destination="el3-IF-c9O" id="BmL-gB-eOo"/>
-                        <outlet property="stampView" destination="IgG-cJ-eQJ" id="ktW-PM-K4D"/>
+                        <outlet property="collectionView" destination="ubl-BZ-176" id="21o-7Y-Zry"/>
+                        <outlet property="refrigeView" destination="J1p-4C-Etw" id="Ql6-Xa-hB6"/>
+                        <outlet property="segmentedControl" destination="el3-IF-c9O" id="eGe-zz-fIM"/>
                         <outlet property="undoButton" destination="jbu-SY-oHl" id="kJN-vX-9cE"/>
                         <segue destination="Rd8-PB-lDI" kind="presentation" identifier="tosetting" id="gb5-RF-tyr"/>
                     </connections>

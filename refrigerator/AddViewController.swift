@@ -66,16 +66,6 @@ class AddViewController: UIViewController {
         textField2.layer.cornerRadius = 10
         textField2.layer.borderWidth = 1
         textField2.layer.borderColor = UIColor(hex: "5EC43B").cgColor
-        
-        // datePicker.date = date!
-        // Do any additional setup after loading the view.
-    }
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func back() {
@@ -103,7 +93,6 @@ class AddViewController: UIViewController {
             
         }
         
-        //label2.text = formatter.string(from: datePicker.date)
         
         try! realm.write {
             yasai.name = inputText
@@ -153,16 +142,4 @@ class AddViewController: UIViewController {
     func changeLabelDate(date:NSDate) {
         textField2.text = formatter.string(from: datePicker.date)
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
