@@ -9,7 +9,10 @@
 import UIKit
 
 class HatenaViewController: UIViewController {
-
+    
+    @IBOutlet weak var PageControl: UIPageControl!
+    @IBOutlet weak var ScrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +24,15 @@ class HatenaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func tapPageControl(sender: UIPageControl) {
+        ScrollView.contentOffset.x = ScrollView.frame.maxX * CGFloat(sender.currentPage)
+        PageControl.currentPage = Int(ScrollView.contentOffset.x / ScrollView.frame.maxX)
     }
-    */
+    
+    @IBAction func modoru(){
+        self.dismiss(animated: true, completion: nil)
+    }
+
+   
 
 }

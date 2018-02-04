@@ -63,7 +63,7 @@
         <!--Refrige View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RefrigeViewController" customModule="refrigerator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="first" id="BYZ-38-t0r" customClass="RefrigeViewController" customModule="refrigerator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -193,19 +193,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kaitou.png" translatesAutoresizingMaskIntoConstraints="NO" id="x1c-S7-Gng">
-                                <rect key="frame" x="26" y="54" width="322" height="593"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRP-5e-yaM">
                                 <rect key="frame" x="298" y="11" width="61" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="✖️"/>
+                                <connections>
+                                    <action selector="modoru" destination="XXS-gf-v4v" eventType="touchUpInside" id="5J3-Wp-BZs"/>
+                                </connections>
                             </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="yEb-X5-hfQ">
+                                <rect key="frame" x="16" y="610" width="343" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" red="0.36862745099999999" green="0.70980392160000005" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.59678073210000004" green="0.80175285529999996" blue="0.60522282429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="tapPageControlWithSender:" destination="XXS-gf-v4v" eventType="touchUpInside" id="dfj-mf-Afc"/>
+                                </connections>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SVl-er-doD">
+                                <rect key="frame" x="16" y="77" width="343" height="525"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="PageControl" destination="yEb-X5-hfQ" id="bXR-ct-uFy"/>
+                        <outlet property="ScrollView" destination="SVl-er-doD" id="DDU-lY-iR7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mV-fS-EgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -324,7 +340,6 @@
     </scenes>
     <resources>
         <image name="hatena.png" width="256" height="256"/>
-        <image name="kaitou.png" width="321" height="608"/>
         <image name="reizouko.gif" width="595" height="619"/>
         <image name="reizouko.png" width="525" height="497"/>
         <image name="white.jpg" width="480" height="640"/>
