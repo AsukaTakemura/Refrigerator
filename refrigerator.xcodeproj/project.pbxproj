@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17084A6C204279DC00882F89 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 17084A6B204279DB00882F89 /* start.png */; };
 		1716DEC31ED175910039B005 /* drink.png in Resources */ = {isa = PBXBuildFile; fileRef = 1716DEC21ED175910039B005 /* drink.png */; };
 		1716DEC51ED1761C0039B005 /* hituji.png in Resources */ = {isa = PBXBuildFile; fileRef = 1716DEC41ED1761C0039B005 /* hituji.png */; };
 		171838DB1E470F2800A9A9FF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171838DA1E470F2800A9A9FF /* AddViewController.swift */; };
@@ -40,7 +41,6 @@
 		1762CDB31E347CC20091BA93 /* daion.png in Resources */ = {isa = PBXBuildFile; fileRef = 1762CDAF1E347CC20091BA93 /* daion.png */; };
 		1778FE46201DA5F000272916 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778FE45201DA5F000272916 /* UIColorHex.swift */; };
 		177D81211E220A6A00486943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81201E220A6A00486943 /* AppDelegate.swift */; };
-		177D81231E220A6A00486943 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81221E220A6A00486943 /* ViewController.swift */; };
 		177D81281E220A6A00486943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177D81271E220A6A00486943 /* Assets.xcassets */; };
 		177D812B1E220A6A00486943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177D81291E220A6A00486943 /* LaunchScreen.storyboard */; };
 		177D81361E220A6A00486943 /* refrigeratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D81351E220A6A00486943 /* refrigeratorTests.swift */; };
@@ -72,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17084A6B204279DB00882F89 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
 		1716DEC21ED175910039B005 /* drink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drink.png; sourceTree = "<group>"; };
 		1716DEC41ED1761C0039B005 /* hituji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hituji.png; sourceTree = "<group>"; };
 		171838DA1E470F2800A9A9FF /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +106,6 @@
 		1778FE45201DA5F000272916 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 		177D811D1E220A6A00486943 /* refrigerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = refrigerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		177D81201E220A6A00486943 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		177D81221E220A6A00486943 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		177D81271E220A6A00486943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		177D812A1E220A6A00486943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		177D812C1E220A6A00486943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,6 +162,7 @@
 		172EBB721E8B4A81003CC7A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				17084A6B204279DB00882F89 /* start.png */,
 				177DCD961F56A54000F70B27 /* icon.png */,
 				1788EA421F356F2300EF8986 /* white.jpg */,
 				1716DEC41ED1761C0039B005 /* hituji.png */,
@@ -224,7 +225,6 @@
 				172EBB721E8B4A81003CC7A1 /* image */,
 				177D81201E220A6A00486943 /* AppDelegate.swift */,
 				17E13D101F2450D100050F77 /* Yasai.swift */,
-				177D81221E220A6A00486943 /* ViewController.swift */,
 				171838DC1E47127000A9A9FF /* Main.storyboard */,
 				175C2C122025A24E00457075 /* HatenaViewController.swift */,
 				171838DA1E470F2800A9A9FF /* AddViewController.swift */,
@@ -412,6 +412,7 @@
 				175C2C112025876100457075 /* hatena.png in Resources */,
 				172EBB6A1E8A467A003CC7A1 /* juice.png in Resources */,
 				172EBB5B1E88EB09003CC7A1 /* kabotya.png in Resources */,
+				17084A6C204279DC00882F89 /* start.png in Resources */,
 				172EBB5A1E88EB09003CC7A1 /* piman.png in Resources */,
 				1788EA431F356F2300EF8986 /* white.jpg in Resources */,
 				1716DEC31ED175910039B005 /* drink.png in Resources */,
@@ -594,7 +595,6 @@
 				17E13D111F2450D100050F77 /* Yasai.swift in Sources */,
 				175C2C132025A24E00457075 /* HatenaViewController.swift in Sources */,
 				1778FE46201DA5F000272916 /* UIColorHex.swift in Sources */,
-				177D81231E220A6A00486943 /* ViewController.swift in Sources */,
 				177D81211E220A6A00486943 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

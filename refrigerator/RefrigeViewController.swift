@@ -15,7 +15,6 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
     @IBOutlet var refrigeView: UIView!
     @IBOutlet var undoButton:UIButton!
     @IBOutlet var addDeleteButton:UIButton!
-    @IBOutlet var backButton: UIButton!
     @IBOutlet var hatenaButton: UIButton!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
@@ -48,7 +47,6 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
         
         undoButton.layer.cornerRadius = 10
         addDeleteButton.layer.cornerRadius = 10
-        backButton.layer.cornerRadius = 10
         
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(addImageView(gesture:)))
         self.refrigeView.addGestureRecognizer(singleTap)
@@ -230,7 +228,7 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
         setStamps()
     }
     
-    func segmentedControlChanged(_ sender: UISegmentedControl) {
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             print("野菜")
@@ -321,10 +319,7 @@ class RefrigeViewController: UIViewController, UICollectionViewDataSource ,UICol
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    @IBAction func back() {
-        self.dismiss(animated: true, completion: nil)
-        
-    }
+    
     
     @IBAction func hatena(){
         let storyboard: UIStoryboard = self.storyboard!
